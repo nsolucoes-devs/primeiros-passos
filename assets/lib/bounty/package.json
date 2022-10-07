@@ -1,0 +1,42 @@
+{
+  "name": "bounty",
+  "version": "1.3.0",
+  "description": "SVG library for transitioning numbers with motion blur",
+  "main": "lib/bounty.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --inline --host 0.0.0.0",
+    "build": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "lib/*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderitual/bounty.git"
+  },
+  "keywords": [
+    "svg",
+    "odometer",
+    "effect",
+    "animation",
+    "ui",
+    "library",
+    "webcomponents"
+  ],
+  "author": "Michal Skowronek <skowronkow@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^10.0.0",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^6.0.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^3.1.11"
+  }
+}

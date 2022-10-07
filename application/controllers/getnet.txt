@@ -1,0 +1,5 @@
+GetNet SandBox
+
+client_id	f01ab062-f0ea-4530-91fa-e6d77315cfdb
+client_secret	8f03399e-3954-49a1-899d-07deac29e594
+url_api		https://api-sandbox.getnet.com.br/

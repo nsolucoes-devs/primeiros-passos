@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://showdasorte.com/sitemap.xml

@@ -1,0 +1,44 @@
+:root {
+    --header-height: 4.5rem;
+    /* colors */
+    --hue: 180;
+    --hue2: 335;
+    /* HSL color mode */
+    --base-color: hsl(var(--hue) 36% 57%);
+    --base-color-second: hsl(var(--hue) 65% 88%);
+    --base-color-alt: hsl(var(--hue2) 100% 80%);
+    --title-color: hsl(var(--hue) 41% 10%);
+    --text-color: hsl(0 0% 46%);
+    --text-color-light: hsl(0 0% 98%);
+    --body-color: hsl(0 0% 98%);
+}
+
+// Heading Color
+$heading-color: #212121;
+
+// Text Color
+$text-color: var(--text-color);
+
+// Default Background
+$bg-default: #ffbb38;
+
+// Gray Background
+$bg-gray: #f1f7f9;
+
+// Primary Color
+$pri-color: var(--base-color);
+
+// Secondary Color
+$sec-color: var(--base-color-second);
+
+// White Color
+$white-color: #ffffff;
+
+// Dark Color
+$dark-color: #000000;
+
+// Border Color
+$border-color: #eaeaea;
+
+// Footer Color
+$foo-color: #021c3c;

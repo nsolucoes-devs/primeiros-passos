@@ -1,0 +1,12 @@
+[29-Mar-2021 19:51:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home/agencia/public_html/show/resources/doompdf/autoload.inc.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/agencia/public_html/show/resources/doompdf/autoload.inc.php on line 29
+[29-Mar-2021 19:55:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home/agencia/public_html/show/resources/doompdf/autoload.inc.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/agencia/public_html/show/resources/doompdf/autoload.inc.php on line 29
+[29-Mar-2021 19:58:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home/agencia/public_html/show/resources/doompdf/autoload.inc.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/agencia/public_html/show/resources/doompdf/autoload.inc.php on line 29

@@ -1,0 +1,109 @@
+.fab2{
+  position: fixed;
+  bottom:75px;
+  right:10px;
+  z-index: 9999;
+}
+
+.fab2 a{
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
+  background-color: #bd1717;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  font-size: 24px;
+  color: white;
+  opacity: 0.5;
+    
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab2 a:hover{ opacity: 1 }
+
+.fab2 a.main{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #5b19b7;
+  right: 45px;
+  bottom: 350px;
+  z-index: 9999;
+}
+
+.fab2 ul{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  padding:0;
+  padding-right:5px;
+  margin:0;
+  list-style:none;
+  z-index:10;
+  
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab2 ul li{
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: -10%;
+  opacity: 0;
+  
+  -webkit-transition: .3s ease-out;
+  -moz-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.fab2 ul li label{
+  margin-right:10px;
+  white-space: nowrap;
+  display: block;
+  margin-top: 10px;
+  padding: 5px 8px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  border-radius:3px;
+  height: 18px;
+  font-size: 16px;
+  pointer-events: none;
+  opacity:0;
+  
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab2 button.main:active,
+.fab2 button.main:focus{
+  outline: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,.5);
+ }
+ 
+.fab2 button.main:active:before,
+.fab2 button.main:focus:before{
+  content: '↑';
+}
+
+.fab2 button.main:active + ul,
+.fab2 button.main:focus + ul{
+  bottom: 70px;
+}
+
+.fab2 button.main:active + ul li,
+.fab2 button.main:focus + ul li{
+  margin-bottom: 10px;
+  opacity: 1;
+}
+
+.fab2 button.main:active + ul li:hover label,
+.fab2 button.main:focus + ul li:hover label{
+  opacity: 1;
+}
