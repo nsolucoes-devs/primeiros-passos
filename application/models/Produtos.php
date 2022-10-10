@@ -24,7 +24,8 @@ class Produtos extends CI_Model {
     }
     
     public function getProdutoSite($id){
-        $this->db->select("produto_id, produto_nome, produto_modelo, produto_detalhes, produto_imagens_opcional1, produto_imagens_opcional2, produto_imagens_opcional3, produto_imagens_opcional4, produto_imagens_opcional5, produto_tamanhos, produto_cores, produto_variacoes, produto_especifico, produto_idloja, produto_habilitado, produto_departamentos");
+        $this->db->select("produto_id, produto_nome, produto_modelo, produto_detalhes, produto_imagens_opcional1, produto_imagens_opcional2, produto_imagens_opcional3, produto_imagens_opcional4, produto_imagens_opcional5, produto_tamanhos, produto_cores, produto_variacoes, produto_especifico, produto_idloja, produto_habilitado, produto_departamentos, marca_nome as produto_marca");
+        $this->db->join('marcas', 'marca.marca_id = produtos.produto_marca_id', 'left');        
         $this->db->where('produto_id', $id);
         $a = $this->db->get('produtos')->row_array();
         
