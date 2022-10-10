@@ -1,8 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/agencia/public_html/pp 
+    - export DEPLOYPATH=/home/agencia/public_html/tie 
     - /bin/cp -R * $DEPLOYPATH
     - export PATH=/home/agencia/bin/:$PATH
-    - npm run build --prefix /home/agencia/public_html/pp
-    - npm run start --prefix /home/agencia/public_html/pp
+    - npm run build --prefix /home/agencia/public_html/tie
+    - npm run start --prefix /home/agencia/public_html/tie

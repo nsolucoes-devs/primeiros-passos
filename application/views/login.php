@@ -19,81 +19,82 @@
        
     
     <style>
-    .input100 {
-        font-family: 'Montserrat'!important;
-    }
-    
-    .login100-form-bgbtn {
-        background: -webkit-linear-gradient(right, #d67514, #ea6d13, #e8a268, #bb5b17);
-    }
-    .focus-input100::before{
-        background: -webkit-linear-gradient(left, var(--base-color), #444);
-    }
-    .wrap-login100 {
-        width: 400px;  
-        padding: 40px;
-    }
-    
-    .checkbox{
-        height: 16px;
-        width: 16px;
-    }
-    
-    .titulo2{
-        color: grey;
-        margin-top: 34px
-    }
-    
-    .div-checkbox{
-        margin-top: 4px;
-        width: 45%;
-        margin-left: -100px;
-    }
-    
-    .div-lembre{
-         width: 55%;
-         padding: 0;
-         padding-left: 17px;
-    }
-    .btn-primary::before {
-        background: #444!important;
-    }
-    
-    .swal2-popup .swal2-styled.swal2-confirm {
-        background-color: var(--base-color)!important;
-    }
-    
-    @media(max-width: 500px){
+        .input100 {
+            font-family: 'Montserrat'!important;
+        }
+        
+        .login100-form-bgbtn {
+            background: -webkit-linear-gradient(right, #d67514, #ea6d13, #e8a268, #bb5b17);
+        }
+        .focus-input100::before{
+            background: -webkit-linear-gradient(left, var(--base-color), #444);
+        }
         .wrap-login100 {
-            width: 290px;   
-            padding: 35px;
-            margin-left: 9%;
+            width: 400px;  
+            padding: 40px;
         }
-        #row-principal{
-            margin-top: 22%;
-        }
+        
         .checkbox{
-            height: 21px;
-            width: 21px;
+            height: 16px;
+            width: 16px;
         }
+        
         .titulo2{
             color: grey;
-            margin-top: 0;
+            margin-top: 34px
         }
+        
         .div-checkbox{
-            margin-left: -15px;
-            width: 10%;
+            margin-top: 4px;
+            width: 45%;
+            margin-left: -100px;
         }
+        
         .div-lembre{
-             width: 70%;
-             padding: 0;
-             padding-left: 17px;
+            width: 55%;
+            padding: 0;
+            padding-left: 17px;
         }
-        .politica{
-            text-align: center!important;
+        .btn-primary::before {
+            background: #444!important;
         }
-    }
+        
+        .swal2-popup .swal2-styled.swal2-confirm {
+            background-color: var(--base-color)!important;
+        }
+        
+        @media(max-width: 500px){
+            .wrap-login100 {
+                width: 290px;   
+                padding: 35px;
+                margin-left: 9%;
+            }
+            #row-principal{
+                margin-top: 22%;
+            }
+            .checkbox{
+                height: 21px;
+                width: 21px;
+            }
+            .titulo2{
+                color: grey;
+                margin-top: 0;
+            }
+            .div-checkbox{
+                margin-left: -15px;
+                width: 10%;
+            }
+            .div-lembre{
+                width: 70%;
+                padding: 0;
+                padding-left: 17px;
+            }
+            .politica{
+                text-align: center!important;
+            }
+        }
     </style>
+
 	<div class="limiter">
 		<div class="container-login100" style="background: #fafafa;">
 		    <div class="row" id="row-principal">
@@ -179,7 +180,7 @@
         						<div class="wrap-login100-form-btn" style="border-radius: 5px;">
         							<div class="login100-form-bgbtn"></div>
         							<?php if(isset($chave)){ ?>
-            							<button type="button" onclick="validaCpf()" class="login100-form-btn g-recaptcha" style="background: var(--base-color);"  data-sitekey="<?php echo $chave['chave_site'] ?>" data-callback='onSubmit2' data-action='submit'>
+            							<button type="button" onclick="validaCpf()" class="login100-form-btn" style="background: var(--base-color);"  > <!-- data-sitekey="<?php echo $chave['chave_site'] ?>" data-callback='onSubmit2' data-action='submit' -->
             								Cadastrar
             							</button>
         							<?php } ?>
@@ -228,7 +229,7 @@
         					<div class="container-login100-form-btn">
         						<div class="wrap-login100-form-btn" style="border-radius: 5px;">
         							<div class="login100-form-bgbtn"></div>
-        							<button class="login100-form-btn" style="background: var(--base-color);" data-callback='onSubmit' data-action='submit'>
+        							<button class="login100-form-btn" style="background: var(--base-color);">  <!-- data-callback='onSubmit' data-action='submit' -->
         								Entrar
         							</button>
         						</div>
@@ -307,7 +308,7 @@
 	<script src="<?php echo base_url() ?>assets/areauser/js/main.js"></script>
 	
 	
-	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
 
     <script>
        function onSubmit(token) {
