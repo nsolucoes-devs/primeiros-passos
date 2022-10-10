@@ -209,7 +209,7 @@
                 font-size: 16px!important;
             }
             .pro-valor{
-                font-size: 33px;
+                font-size: 23px;
                 text-align: center;
             }
             .imagem-produto{
@@ -272,14 +272,15 @@
 			display: block;
 		}
 		.zoom img::selection { background-color: transparent; }
-		<?php if($mobile == 1){ ?>
-		.col-xs-7{
-		    flex: 0 0 58.33%;
-		    max-width: 58.33%;
-		    width: 58.33%;
-		    float: left;
-	        margin-left: 19%;
-		}
+        
+		<?php if($mobile == 1){ ?>            
+            .col-xs-7{
+                flex: 0 0 58.33%;
+                max-width: 58.33%;
+                width: 58.33%;
+                float: left;
+                margin-left: 19%;
+            }
 		<?php } ?>
 		.carousel-indicators .active {
             background-color: #524d4d!important;
@@ -300,6 +301,8 @@
             background: #28769a!important;
         }
 	</style>
+
+    
     <section class="contact-section" style="padding-top: <?php if($mobile == 1) { echo '0'; } else { echo '70'; } ?>px; padding-bottom: 0px; background: #fafafa!important;">
         <div class="container row-eq-height" style="padding: <?php if($mobile == 1) { echo '40'; } else { echo '15'; } ?>px;">
             <div class="row row-eq-height">
@@ -325,14 +328,7 @@
                                                 <?php } ?>
                                             <?php } ?>
                                         </ol>
-                                        <div class="carousel-inner">
-                                            <div class="estrelas" style="text-shadow: 0 0 1px #736102;font-size: 20px;color: gold!important;position: absolute;top: -5px;right: 0px;z-index: 1;">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </div>
+                                        <div class="carousel-inner">                                            
                                             <div class="carousel-item active" id="item1">
                                                 <span class='zoom ex' id='primeiraImagem' style="display: none; width: 100%!important">
                                                     <?php if($produto){ ?>
@@ -365,6 +361,13 @@
                                                 <span class="sr-only">Next</span>
                                             </a>
                                         <?php } ?>
+                                    </div>
+                                    <div class="estrelas w-100 text-right" style="text-shadow: 0 0 1px #736102;font-size: 20px;color: gold!important;">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
@@ -454,8 +457,8 @@
                                 <?php } ?>
                                 
                                 <div class="col-md-12 col-12 form-group" style="margin-top: 5%" id="div-estoque">
-                                    <button onclick="Carrinho()" class="buttoncarrinho btn-block">
-                                        COMPRAR &nbsp;&nbsp;<i class="icone-finalizar fa fa-cart-plus" aria-hidden="true"></i>
+                                    <button onclick="Carrinho()" class="btn btn-primary btn-block btn-lg">
+                                        COMPRAR &nbsp;&nbsp;<i class="fa fa-cart-plus" aria-hidden="true"></i>
                                     </button>
                                 </div>
                             </div>

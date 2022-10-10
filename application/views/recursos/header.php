@@ -335,7 +335,7 @@
             }
             #busca-icone {
                 left: 130px;
-                bottom: 35px;
+                bottom: 55px;
             }
             .classynav ul li {
                 margin-left: 0!important;
@@ -383,15 +383,17 @@
                             </a>
                         </div>
                         
-                        <div id="busca-topo" class="contact search-div" style="margin-right: -15px!important">
-                            <label>&nbsp;</label>
-                            <form id="buscador" action="<?php echo base_url('produto/buscaProdutos');?>" method="post">
-                                <input autocomplete="off" id="busca" name="busca" type="text" placeholder="Busque seu produto" class="form-control">
-                                <i onclick="Submit()" id="busca-icone" class="fa fa-search" aria-hidden="true"></i>
-                                <div class="box-search" style="display: block; background: white;position: fixed;width: 250px;">
-                            </form>
+                        <?php if($mobile == 0){  ?>
+                            <div id="busca-topo" class="contact search-div" style="margin-right: -15px!important">
+                                <label>&nbsp;</label>
+                                <form id="buscador" action="<?php echo base_url('produto/buscaProdutos');?>" method="post">
+                                    <input autocomplete="off" id="busca" name="busca" type="text" placeholder="Busque seu produto" class="form-control">
+                                    <i onclick="Submit()" id="busca-icone" class="fa fa-search" aria-hidden="true"></i>
+                                    <div class="box-search" style="display: block; background: white;position: fixed;width: 250px;">
+                                </form>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
 
                         <!-- Top Contact Info -->
                         <div class="top-contact-info d-flex align-items-center" style="<?php if($mobile == 0){ echo 'margin-top:  -5px;'; } ?>">
@@ -482,17 +484,20 @@
                             <!-- Nav End -->
                         </div>
 
+                        <?php if($mobile == 1){  ?>
                         <!-- Contact -->
                         <div id="busca-baixo" class="contact search-div">
                             <label>&nbsp;</label>
                             <form id="buscador" action="<?php echo base_url('produto/buscaProdutos');?>" method="post">
-                                <input autocomplete="off" id="busca" name="busca" type="text" placeholder="Busca" class="form-control">
-                                <i onclick="Submit()" id="busca-icone" class="fa fa-search" aria-hidden="true"></i>
+                                <input autocomplete="off" id="busca" name="busca" type="text" placeholder="Busca" class="form-control">                                
+                                <a type="submit" id="busca-icone">
+                                    <i onclick="Submit()" class="fa fa-search" aria-hidden="true"></i>
+                                </a>
                                 <div class="box-search" style="display: block; background: white;position: fixed;width: 250px;">
                             </form>
                             </div>
                         </div>
-                        
+                        <?php } ?>
                     </nav>
                 </div>
             </div>
