@@ -11,6 +11,12 @@ class Logincontroller extends MY_Controller {
 	        $dados['erro'] = $this->session->userdata('mensagem_erro');
 	        $this->session->unset_userdata('mensagem_erro');
 	    }
+
+        if(array_key_exists('logado', $this->session->userdata())){
+            if($_SESSION['logado'] == 1){
+                redirect('106a6c241b8797f52e1e77317b96a201','refresh');
+            }
+	    }
         
         $dados['chave'] = $this->configs->getChave(2);
         $this->load->view('restrito/login', $dados);
@@ -25,6 +31,11 @@ class Logincontroller extends MY_Controller {
 	        $this->session->unset_userdata('mensagem_erro');
 	    }
 	    
+        if(array_key_exists('logado', $this->session->userdata())){
+            if($_SESSION['logado'] == 1){
+                redirect('106a6c241b8797f52e1e77317b96a201','refresh');
+            }
+	    }
 	    
         if(!isset($erro)){
             $erro = 0;

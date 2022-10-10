@@ -167,11 +167,23 @@ class Admin_Controller extends MY_Controller{
 
     public function __construct(){
         parent::__construct();
+        $this->load->database();
+        $this->load->model('usuarios');
 
         //-> START - Verifica se ele está logado
         $logado = $this->session->userdata("logado");
         if ($logado != TRUE){
             redirect(base_url('nsgestst'));
+        } else {
+            $User_Id = $this->session->userdata("user_id");
+            $data_user = $this->usuarios->usuarioId($User_Id);
+            if($data_user){
+                if($data_user['ativo'] != 1){
+                    redirect(base_url('215521f1d88d23d4411a877b4d4a0d87'));
+                }
+            } else {
+                redirect(base_url('215521f1d88d23d4411a877b4d4a0d87'));
+            }
         }
         //-> END - Verifica se ele está logado
         
