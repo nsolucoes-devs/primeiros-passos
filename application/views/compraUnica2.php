@@ -625,7 +625,7 @@
                                     <div class="row" style="margin-top: 5%;">
                                         <?php if(isset($chave)){ ?>
                                             <div class="col-md-12 form-group">
-                                                <button style="height: 40px!important;" class="btn-block btn btn-primary g-recaptcha" data-sitekey="<?php echo $chave['chave_site'] ?>" data-callback='onSubmit' data-action='submit'><b style="font-size: 13px; color: white">Finalizar Pedido</b></button>
+                                                <button style="height: 40px!important;" class="btn-block btn btn-primary"  data-callback='onSubmit' data-action='submit'><b style="font-size: 13px; color: white">Finalizar Pedido</b></button>
                                             </div>
                                         <?php } ?>
                                     </div>
@@ -657,7 +657,7 @@
                                 <div class="row" style="margin-top: 5%;">
                                     <?php if(isset($chave)){ ?>
                                         <div class="col-md-12 form-group">
-                                            <button style="height: 40px!important;" class="btn-block btn btn-primary g-recaptcha" data-sitekey="<?php echo $chave['chave_site'] ?>" data-callback='onSubmit' data-action='submit'><b style="font-size: 13px; color: white">Finalizar Pedido</b></button>
+                                            <button style="height: 40px!important;" class="btn-block btn btn-primary" data-callback='onSubmit' data-action='submit'><b style="font-size: 13px; color: white">Finalizar Pedido</b></button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -1086,7 +1086,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" style="background: #fc2db5; border-color: #fc2db5" class="btn btn-primary g-recaptcha" data-sitekey="<?php echo $chave['chave_site'] ?>" data-callback='onSubmit6' data-action='submit'>Pagar</button>
+        <button type="button" style="background: #fc2db5; border-color: #fc2db5" class="btn btn-primary" data-callback='onSubmit6' data-action='submit'>Pagar</button>
       </div>
     </div>
   </div>
@@ -1118,7 +1118,7 @@
             <a style="position: relative;top: 6px;left: calc(100% - 110px);font-size: 13px; color: #444; cursor: pointer;" href="#" data-toggle="modal" data-target="#esqueciSenhaModal" onclick="esqueciSenha()">Esqueci a senha</a>
           </div>
           <div class="modal-footer">
-            <button style="width: 120px;margin-right: auto;" type="button" class="btn btn-primary g-recaptcha" data-sitekey="<?php echo $chave['chave_site'] ?>" data-callback='onSubmit4' data-action='submit'><b style="color: white">Cadastrar</b></button>
+            <button style="width: 120px;margin-right: auto;" type="button" class="btn btn-primary" data-callback='onSubmit4' data-action='submit'><b style="color: white">Cadastrar</b></button>
             <button style="width: 120px;" type="submit" class="btn btn-primary">Logar</button>
           </div>
       </form>
@@ -1128,7 +1128,6 @@
 
 <script src="<?php echo base_url('recursos/lib/sweetalert2/dist/sweetalert2.min.js'); ?>"></script>
 <script src="<?php echo base_url('recursos/js/material/plugins/sweetalert2.js'); ?>"></script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
 
 
 <!-- SCRIPTS DO CARRINHO INICIO -->

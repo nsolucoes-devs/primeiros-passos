@@ -388,10 +388,10 @@
             </div>
             
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="payment-tab" data-toggle="tab" href="#payment" role="tab" aria-controls="payment" aria-selected="true">Pagamento</a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <li class="nav-item active">
                     <a class="nav-link" id="correio-tab" data-toggle="tab" href="#correio" role="tab" aria-controls="correio" aria-selected="true">Envios</a>
                 </li>
                 <!--
@@ -399,18 +399,18 @@
                     <a class="nav-link" id="transportadora-tab" data-toggle="tab" href="#transportadora" role="tab" aria-controls="transportadora" aria-selected="true">Transportadora</a>
                 </li>
                 -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="chaves-tab" data-toggle="tab" href="#chaves" role="tab" aria-controls="chaves" aria-selected="true">Chaves</a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="gestoremail-tab" data-toggle="tab" href="#gestoremail" role="tab" aria-controls="gestoremail" aria-selected="true">Email</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" id="vendedores-tab" data-toggle="tab" href="#vendedores" role="tab" aria-controls="vendedores" aria-selected="true">Whatsapp Ecommerce</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="soon-tab" data-toggle="tab" href="#soon" role="tab" aria-controls="soon" aria-selected="true">Formas de Pagamentos</a>
-                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" id="soon-tab" data-toggle="tab" href="#soon" role="tab" aria-controls="soon" aria-selected="true">Formas de Pagamentos</a> -->
+                <!-- </li> -->
             </ul>
             
             <br>
@@ -498,240 +498,349 @@
                             </div>
                         </div>
                     </form>
+                    </div>
+                
+                        
+                <div class="tab-pane fade" id="correio" role="tabpanel" aria-labelledby="correio-tab">
+                    <div class="row" style="margin-top: 2%">
+                        <form action="<?php echo base_url('ab8a2766f50ffb443958ea946a9ba731') ?>" method="post">    
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size:15px;"><b>DIAS A MAIS PARA ENTREGA</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="entregamais6" name="entregamais6" class="cep form-control" value="<?php echo $correios[5]['dias_entrega_extra'] ?>" required>
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select name="status6" id="status6" class="form-control">
+                                                <option value="1" <?php if($correios[5]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[5]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size:15px;"><b>SEDEX</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="cep1" name="cep1" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[0]['cepOrigem'] ?>" required>
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select name="status1" id="status1" class="form-control">
+                                                <option value="1" <?php if($correios[0]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[0]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size:15px;"><b>PAC</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="cep2" name="cep2" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[1]['cepOrigem'] ?>" required>                
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select name="status2" id="status2" class="form-control">
+                                                <option value="1" <?php if($correios[1]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[1]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size: 15px;"><b>SEDEX 12</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="cep3" name="cep3" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[2]['cepOrigem'] ?>" required>
+                                        </div>
+                                        <div class="col-md-4 form-group">
+                                            <input onchange="contrato_verificar1()" type="text" id="contrato3" name="contrato3" class="form-control" placeholder="Contrato" value="<?php echo $correios[2]['contratoCorreio'] ?>">
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select name="status3" id="status3" class="form-control" disabled>
+                                                <option value="1" <?php if($correios[2]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[2]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size:15px;"><b>SEDEX 10</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="cep4" name="cep4" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[3]['cepOrigem'] ?>" required>
+                                        </div>
+                                        <div class="col-md-4 form-group">
+                                            <input onchange="contrato_verificar2()" type="text" id="contrato4" name="contrato4" class="form-control" placeholder="Contrato" value="<?php echo $correios[3]['contratoCorreio'] ?>">
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select name="status4" id="status4" class="form-control" disabled>
+                                                <option value="1" <?php if($correios[3]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[3]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size:15px;"><b>SEDEX HOJE</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="cep5" name="cep5" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[4]['cepOrigem'] ?>" required>
+                                        </div>
+                                        <div class="col-md-4 form-group">
+                                            <input onchange="contrato_verificar3()" type="text" id="contrato5" name="contrato5" class="form-control" placeholder="Contrato" value="<?php echo $correios[4]['contratoCorreio'] ?>">
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select name="statu5" id="status5" class="form-control" disabled>
+                                                <option value="1" <?php if($correios[4]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[4]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size:15px;"><b>GRÁTIS POR COMPRA</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="cep7" name="cep7" class="cep form-control" placeholder="CEP ORIGEM"  value="<?php echo $correios[6]['cepOrigem'] ?>" required>
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select onchange="verifica_gratis(1)" name="status7" id="status7"  class="form-control">
+                                                <option value="1" <?php if($correios[6]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[6]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 form-group ">
+                                            <input type="text" id="valor7" name="valor7" class="money form-control" placeholder="Valor"  value="<?php echo $correios[6]['valorMinimo'] ?>">
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <input type="text" id="entregamais7" name="entregamais7" class="cep form-control" placeholder="Dias" value="<?php echo $correios[6]['dias_entrega_extra'] ?>">
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size:15px;"><b>GRÁTIS POR ESTADO(S)</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="cep8" name="cep8" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[7]['cepOrigem'] ?>" required>
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select onchange="verifica_gratis(2)" name="status8" id="status8"  class="form-control">
+                                                <option value="1" <?php if($correios[7]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[7]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 form-group">
+                                            <select id="estados8" name="estados8[]" multiple class="js-example-basic-multiple" style="width: 100%!important">
+                                                <option value="AC">Acre</option>
+                                                <option value="AL">Alagoas</option>
+                                                <option value="AP">Amapá</option>
+                                                <option value="AM">Amazonas</option>
+                                                <option value="BA">Bahia</option>
+                                                <option value="CE">Ceará</option>
+                                                <option value="DF">Distrito Federal</option>
+                                                <option value="ES">Espírito Santo</option>
+                                                <option value="GO">Goiás</option>
+                                                <option value="MA">Maranhão</option>
+                                                <option value="MT">Mato Grosso</option>
+                                                <option value="MS">Mato Grosso do Sul</option>
+                                                <option value="MG">Minas Gerais</option>
+                                                <option value="PA">Pará</option>
+                                                <option value="PB">Paraíba</option>
+                                                <option value="PR">Paraná</option>
+                                                <option value="PE">Pernambuco</option>
+                                                <option value="PI">Piauí</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="RN">Rio Grande do Norte</option>
+                                                <option value="RS">Rio Grande do Sul</option>
+                                                <option value="RO">Rondônia</option>
+                                                <option value="RR">Roraima</option>
+                                                <option value="SC">Santa Catarina</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="SE">Sergipe</option>
+                                                <option value="TO">Tocantins</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <input type="text" id="entregamais8" name="entregamais8" class="cep form-control" placeholder="Dias" value="<?php echo $correios[7]['dias_entrega_extra'] ?>">
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 form-group text-center">
+                                            <label class="nome-form" style="font-size:15px;"><b>GRÁTIS POR ESTADO(S) E VALOR</b></label>
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <input type="text" id="cep9" name="cep9" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[8]['cepOrigem'] ?>" required>
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <select onchange="verifica_gratis(3)" name="status9" id="status9"  class="form-control">
+                                                <option value="1" <?php if($correios[8]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
+                                                <option value="0" <?php if($correios[8]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 form-group ">
+                                            <select id="estados9" name="estados9[]" multiple class="js-example-basic-multiple" style="width: 100%!important">
+                                                <option value="AC">Acre</option>
+                                                <option value="AL">Alagoas</option>
+                                                <option value="AP">Amapá</option>
+                                                <option value="AM">Amazonas</option>
+                                                <option value="BA">Bahia</option>
+                                                <option value="CE">Ceará</option>
+                                                <option value="DF">Distrito Federal</option>
+                                                <option value="ES">Espírito Santo</option>
+                                                <option value="GO">Goiás</option>
+                                                <option value="MA">Maranhão</option>
+                                                <option value="MT">Mato Grosso</option>
+                                                <option value="MS">Mato Grosso do Sul</option>
+                                                <option value="MG">Minas Gerais</option>
+                                                <option value="PA">Pará</option>
+                                                <option value="PB">Paraíba</option>
+                                                <option value="PR">Paraná</option>
+                                                <option value="PE">Pernambuco</option>
+                                                <option value="PI">Piauí</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="RN">Rio Grande do Norte</option>
+                                                <option value="RS">Rio Grande do Sul</option>
+                                                <option value="RO">Rondônia</option>
+                                                <option value="RR">Roraima</option>
+                                                <option value="SC">Santa Catarina</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="SE">Sergipe</option>
+                                                <option value="TO">Tocantins</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <input type="text" id="valor9" name="valor9" class="money form-control" placeholder="Valor"  value="<?php echo $correios[8]['valorMinimo'] ?>">
+                                        </div>
+                                        <div class="col-md-1 form-group">
+                                            <input type="text" id="entregamais9" name="entregamais9" class="cep form-control" placeholder="Dias" value="<?php echo $correios[8]['dias_entrega_extra'] ?>">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12" style="text-align: -webkit-center;">
+                                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                                    &nbsp;&nbsp;
+                                    <button type="button" class="btn btn-danger" onclick="reset()">Cancelar</button>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            
-                    
-            <div class="tab-pane fade" id="correio" role="tabpanel" aria-labelledby="correio-tab">
-                <div class="row" style="margin-top: 2%">
-                    <form action="<?php echo base_url('ab8a2766f50ffb443958ea946a9ba731') ?>" method="post">    
+                
+                
+                <div class="tab-pane fade" id="chaves" role="tabpanel" aria-labelledby="chaves-tab">
+                    <form action="<?php echo base_url('7da8089498f0ac8e05a26d6a0f535403') ?>" method="post">
+                        <input type="hidden" name="google-id" id="google-id" class="form-control" value="1">
+                        
+                        <div class="row" style="margin-top: 2%">
+                            <div class="col-md-12">
+                                <div class="col-md-2 form-group text-center">
+                                    <label class="nome-form" style="font-size:15px;"><b>Google Captcha Key V3</b></label>
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <input type="text" name="google-key" id="google-key" class="form-control" value="<?php echo $chave['chave_site'] ?>">
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size:15px;"><b>DIAS A MAIS PARA ENTREGA</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="entregamais6" name="entregamais6" class="cep form-control" value="<?php echo $correios[5]['dias_entrega_extra'] ?>" required>
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select name="status6" id="status6" class="form-control">
-                                            <option value="1" <?php if($correios[5]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[5]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
+                                <div class="col-md-2 form-group text-center">
+                                    <label class="nome-form" style="font-size:15px;"><b>Google Captcha Keys V2</b></label>
                                 </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size:15px;"><b>SEDEX</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="cep1" name="cep1" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[0]['cepOrigem'] ?>" required>
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select name="status1" id="status1" class="form-control">
-                                            <option value="1" <?php if($correios[0]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[0]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
+                                <div class="col-md-4 form-group">
+                                    <input type="text" name="google-key2" id="google-key2" class="form-control" value="<?php echo $chave2['chave_site'] ?>">
                                 </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size:15px;"><b>PAC</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="cep2" name="cep2" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[1]['cepOrigem'] ?>" required>                
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select name="status2" id="status2" class="form-control">
-                                            <option value="1" <?php if($correios[1]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[1]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size: 15px;"><b>SEDEX 12</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="cep3" name="cep3" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[2]['cepOrigem'] ?>" required>
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <input onchange="contrato_verificar1()" type="text" id="contrato3" name="contrato3" class="form-control" placeholder="Contrato" value="<?php echo $correios[2]['contratoCorreio'] ?>">
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select name="status3" id="status3" class="form-control" disabled>
-                                            <option value="1" <?php if($correios[2]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[2]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size:15px;"><b>SEDEX 10</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="cep4" name="cep4" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[3]['cepOrigem'] ?>" required>
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <input onchange="contrato_verificar2()" type="text" id="contrato4" name="contrato4" class="form-control" placeholder="Contrato" value="<?php echo $correios[3]['contratoCorreio'] ?>">
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select name="status4" id="status4" class="form-control" disabled>
-                                            <option value="1" <?php if($correios[3]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[3]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                
-                                
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size:15px;"><b>SEDEX HOJE</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="cep5" name="cep5" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[4]['cepOrigem'] ?>" required>
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <input onchange="contrato_verificar3()" type="text" id="contrato5" name="contrato5" class="form-control" placeholder="Contrato" value="<?php echo $correios[4]['contratoCorreio'] ?>">
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select name="statu5" id="status5" class="form-control" disabled>
-                                            <option value="1" <?php if($correios[4]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[4]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size:15px;"><b>GRÁTIS POR COMPRA</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="cep7" name="cep7" class="cep form-control" placeholder="CEP ORIGEM"  value="<?php echo $correios[6]['cepOrigem'] ?>" required>
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select onchange="verifica_gratis(1)" name="status7" id="status7"  class="form-control">
-                                            <option value="1" <?php if($correios[6]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[6]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2 form-group ">
-                                        <input type="text" id="valor7" name="valor7" class="money form-control" placeholder="Valor"  value="<?php echo $correios[6]['valorMinimo'] ?>">
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <input type="text" id="entregamais7" name="entregamais7" class="cep form-control" placeholder="Dias" value="<?php echo $correios[6]['dias_entrega_extra'] ?>">
-                                    </div>
-                                </div>
-                                
-                                
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size:15px;"><b>GRÁTIS POR ESTADO(S)</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="cep8" name="cep8" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[7]['cepOrigem'] ?>" required>
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select onchange="verifica_gratis(2)" name="status8" id="status8"  class="form-control">
-                                            <option value="1" <?php if($correios[7]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[7]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3 form-group">
-                                        <select id="estados8" name="estados8[]" multiple class="js-example-basic-multiple" style="width: 100%!important">
-                                            <option value="AC">Acre</option>
-                                        	<option value="AL">Alagoas</option>
-                                        	<option value="AP">Amapá</option>
-                                        	<option value="AM">Amazonas</option>
-                                        	<option value="BA">Bahia</option>
-                                        	<option value="CE">Ceará</option>
-                                        	<option value="DF">Distrito Federal</option>
-                                        	<option value="ES">Espírito Santo</option>
-                                        	<option value="GO">Goiás</option>
-                                        	<option value="MA">Maranhão</option>
-                                        	<option value="MT">Mato Grosso</option>
-                                        	<option value="MS">Mato Grosso do Sul</option>
-                                        	<option value="MG">Minas Gerais</option>
-                                        	<option value="PA">Pará</option>
-                                        	<option value="PB">Paraíba</option>
-                                        	<option value="PR">Paraná</option>
-                                        	<option value="PE">Pernambuco</option>
-                                        	<option value="PI">Piauí</option>
-                                        	<option value="RJ">Rio de Janeiro</option>
-                                        	<option value="RN">Rio Grande do Norte</option>
-                                        	<option value="RS">Rio Grande do Sul</option>
-                                        	<option value="RO">Rondônia</option>
-                                        	<option value="RR">Roraima</option>
-                                        	<option value="SC">Santa Catarina</option>
-                                        	<option value="SP">São Paulo</option>
-                                        	<option value="SE">Sergipe</option>
-                                        	<option value="TO">Tocantins</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <input type="text" id="entregamais8" name="entregamais8" class="cep form-control" placeholder="Dias" value="<?php echo $correios[7]['dias_entrega_extra'] ?>">
-                                    </div>
-                                </div>
-                                
-                                
-                                <div class="row">
-                                    <div class="col-md-3 form-group text-center">
-                                        <label class="nome-form" style="font-size:15px;"><b>GRÁTIS POR ESTADO(S) E VALOR</b></label>
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input type="text" id="cep9" name="cep9" class="cep form-control" placeholder="CEP ORIGEM" value="<?php echo $correios[8]['cepOrigem'] ?>" required>
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <select onchange="verifica_gratis(3)" name="status9" id="status9"  class="form-control">
-                                            <option value="1" <?php if($correios[8]['dadosAtivo'] == 1){ echo 'selected'; }  ?>>Ativo</option>
-                                            <option value="0" <?php if($correios[8]['dadosAtivo'] == 0){ echo 'selected'; }  ?>>Inativo</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3 form-group ">
-                                        <select id="estados9" name="estados9[]" multiple class="js-example-basic-multiple" style="width: 100%!important">
-                                            <option value="AC">Acre</option>
-                                        	<option value="AL">Alagoas</option>
-                                        	<option value="AP">Amapá</option>
-                                        	<option value="AM">Amazonas</option>
-                                        	<option value="BA">Bahia</option>
-                                        	<option value="CE">Ceará</option>
-                                        	<option value="DF">Distrito Federal</option>
-                                        	<option value="ES">Espírito Santo</option>
-                                        	<option value="GO">Goiás</option>
-                                        	<option value="MA">Maranhão</option>
-                                        	<option value="MT">Mato Grosso</option>
-                                        	<option value="MS">Mato Grosso do Sul</option>
-                                        	<option value="MG">Minas Gerais</option>
-                                        	<option value="PA">Pará</option>
-                                        	<option value="PB">Paraíba</option>
-                                        	<option value="PR">Paraná</option>
-                                        	<option value="PE">Pernambuco</option>
-                                        	<option value="PI">Piauí</option>
-                                        	<option value="RJ">Rio de Janeiro</option>
-                                        	<option value="RN">Rio Grande do Norte</option>
-                                        	<option value="RS">Rio Grande do Sul</option>
-                                        	<option value="RO">Rondônia</option>
-                                        	<option value="RR">Roraima</option>
-                                        	<option value="SC">Santa Catarina</option>
-                                        	<option value="SP">São Paulo</option>
-                                        	<option value="SE">Sergipe</option>
-                                        	<option value="TO">Tocantins</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <input type="text" id="valor9" name="valor9" class="money form-control" placeholder="Valor"  value="<?php echo $correios[8]['valorMinimo'] ?>">
-                                    </div>
-                                    <div class="col-md-1 form-group">
-                                        <input type="text" id="entregamais9" name="entregamais9" class="cep form-control" placeholder="Dias" value="<?php echo $correios[8]['dias_entrega_extra'] ?>">
-                                    </div>
-                                </div>
-                                
+                            </div>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-md-12" style="text-align: -webkit-center;">
+                                <button type="submit" class="btn btn-primary">Confirmar</button>
+                                &nbsp;&nbsp;
+                                <button type="button" class="btn btn-danger" onclick="reset()">Cancelar</button>
+                                <br><br>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                
+                <div class="tab-pane active" id="gestoremail" role="tabpanel" aria-labelledby="gestoremail-tab">
+                    <form action="<?php echo base_url('1b447af94eb10e8831c155c01be26599') ?>" method="post">
+                        <div class="row">
+                            <div class="col-md-3 form-group text-center">
+                                <label class="nome-form" style="font-size: 15px;"><b>PROTOCOL</b></label>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <input type="text" id="email_protocol" name="email_protocol" class="form-control" placeholder="Protocol" value="<?php echo $email['email_protocol']; ?>" required>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-3 form-group text-center">
+                                <label class="nome-form" style="font-size: 15px;"><b>SMTP_USER</b></label>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <input type="text" id="email_user" name="email_user" class="form-control" placeholder="smtp_usuário" value="<?php echo $email['email_user']; ?>" required>
+                            </div>
+                        </div>   
+                        <div class="row">
+                            <div class="col-md-3 form-group text-center">
+                                <label class="nome-form" style="font-size: 15px;"><b>SMTP_PASS</b></label>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <input type="text" id="email_pass" name="email_pass" class="form-control" placeholder="smtp_pass" value="<?php echo $email['email_pass']; ?>" required>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-3 form-group text-center">
+                                <label class="nome-form" style="font-size: 15px;"><b>SMTP_HOST</b></label>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <input type="text" id="email_host" name="email_host" class="form-control" placeholder="smtp_host" value="<?php echo $email['email_host']; ?>" required>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-3 form-group text-center">
+                                <label class="nome-form" style="font-size: 15px;"><b>SMTP_PORT</b></label>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <input type="text" id="email_port" name="email_port" class="form-control" placeholder="smtp_port" value="<?php echo $email['email_port']; ?>" required>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-3 form-group text-center">
+                                <label class="nome-form" style="font-size: 15px;"><b>SMTP_TIMEOUT</b></label>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <input type="text" id="email_timeout" name="email_timeout" class="form-control" placeholder="smtp_timeout" value="<?php echo $email['email_timeout']; ?>" required>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-3 form-group text-center">
+                                <label class="nome-form" style="font-size: 15px;"><b>CHARSET</b></label>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <input type="text" id="email_charset" name="email_charset" class="form-control" placeholder="Charset" value="<?php echo $email['email_charset']; ?>" required>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -744,268 +853,160 @@
                         </div>
                     </form>
                 </div>
-            </div>
-            
-            
-            <div class="tab-pane fade" id="chaves" role="tabpanel" aria-labelledby="chaves-tab">
-                <form action="<?php echo base_url('7da8089498f0ac8e05a26d6a0f535403') ?>" method="post">
-                    <input type="hidden" name="google-id" id="google-id" class="form-control" value="1">
-                    
-                    <div class="row" style="margin-top: 2%">
-                        <div class="col-md-12">
-                            <div class="col-md-2 form-group text-center">
-                                <label class="nome-form" style="font-size:15px;"><b>Google Captcha Key V3</b></label>
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <input type="text" name="google-key" id="google-key" class="form-control" value="<?php echo $chave['chave_site'] ?>">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="col-md-2 form-group text-center">
-                                <label class="nome-form" style="font-size:15px;"><b>Google Captcha Keys V2</b></label>
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <input type="text" name="google-key2" id="google-key2" class="form-control" value="<?php echo $chave2['chave_site'] ?>">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row form-group">
-                        <div class="col-md-12" style="text-align: -webkit-center;">
-                            <button type="submit" class="btn btn-primary">Confirmar</button>
-                            &nbsp;&nbsp;
-                            <button type="button" class="btn btn-danger" onclick="reset()">Cancelar</button>
-                            <br><br>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            
-            
-            <div class="tab-pane fade" id="gestoremail" role="tabpanel" aria-labelledby="gestoremail-tab">
-                <form action="<?php echo base_url('1b447af94eb10e8831c155c01be26599') ?>" method="post">
-                    <div class="row">
-                        <div class="col-md-3 form-group text-center">
-                            <label class="nome-form" style="font-size: 15px;"><b>PROTOCOL</b></label>
-                        </div>
-                        <div class="col-md-3 form-group">
-                            <input type="text" id="email_protocol" name="email_protocol" class="form-control" placeholder="Protocol" value="<?php echo $email['email_protocol']; ?>" required>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-md-3 form-group text-center">
-                            <label class="nome-form" style="font-size: 15px;"><b>SMTP_USER</b></label>
-                        </div>
-                        <div class="col-md-3 form-group">
-                            <input type="text" id="email_user" name="email_user" class="form-control" placeholder="smtp_usuário" value="<?php echo $email['email_user']; ?>" required>
-                        </div>
-                    </div>   
-                    <div class="row">
-                        <div class="col-md-3 form-group text-center">
-                            <label class="nome-form" style="font-size: 15px;"><b>SMTP_PASS</b></label>
-                        </div>
-                        <div class="col-md-3 form-group">
-                            <input type="text" id="email_pass" name="email_pass" class="form-control" placeholder="smtp_pass" value="<?php echo $email['email_pass']; ?>" required>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-md-3 form-group text-center">
-                            <label class="nome-form" style="font-size: 15px;"><b>SMTP_HOST</b></label>
-                        </div>
-                        <div class="col-md-3 form-group">
-                            <input type="text" id="email_host" name="email_host" class="form-control" placeholder="smtp_host" value="<?php echo $email['email_host']; ?>" required>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-md-3 form-group text-center">
-                            <label class="nome-form" style="font-size: 15px;"><b>SMTP_PORT</b></label>
-                        </div>
-                        <div class="col-md-3 form-group">
-                            <input type="text" id="email_port" name="email_port" class="form-control" placeholder="smtp_port" value="<?php echo $email['email_port']; ?>" required>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-md-3 form-group text-center">
-                            <label class="nome-form" style="font-size: 15px;"><b>SMTP_TIMEOUT</b></label>
-                        </div>
-                        <div class="col-md-3 form-group">
-                            <input type="text" id="email_timeout" name="email_timeout" class="form-control" placeholder="smtp_timeout" value="<?php echo $email['email_timeout']; ?>" required>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-md-3 form-group text-center">
-                            <label class="nome-form" style="font-size: 15px;"><b>CHARSET</b></label>
-                        </div>
-                        <div class="col-md-3 form-group">
-                            <input type="text" id="email_charset" name="email_charset" class="form-control" placeholder="Charset" value="<?php echo $email['email_charset']; ?>" required>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-12" style="text-align: -webkit-center;">
-                            <button type="submit" class="btn btn-primary">Confirmar</button>
-                            &nbsp;&nbsp;
-                            <button type="button" class="btn btn-danger" onclick="reset()">Cancelar</button>
-                            <br><br>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            
-            
-            <div class="tab-pane fade" id="soon" role="tabpanel" aria-labelledby="soon-tab">
-                <div class="row" style="margin-top: 2%">
-                    <div class="col-md-12 form-group">
-                        <div class="col-md-12">
-                            <h3><b>Formas de Pagamento:</b><h3>
-                        </div>
-                        <hr style="width: 95%!important; border-top: 1px solid #79797959; margin-left: 2.5%!important; margin-top: 20px!important; margin-bottom: 20px!important;">
-                    </div>
-                </div>
                 
-                <form action="<?php echo base_url('admin/adminajustes/atualizarFormasPag') ?>" method="post">
-                    <?php if(count($formas_pagamento) > 0){;
-                        $var = count($formas_pagamento);
-                        $aux = 0; foreach($formas_pagamento as $formaP){?>
-                        <div class="row"id="formaPagamento<?php echo $aux;?>">
-                            <div class="col-md-2" style="text-align:-webkit-center;">
-                                <?php if($var == $aux+1){ ?>
-                                <button id="buttonForma<?php echo $aux;?>" type="button" class="btn btn-success" onclick="novaforma(<?php echo $aux;?>)">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </button>
-                                <?php } ?>
+                
+                <div class="tab-pane fade" id="soon" role="tabpanel" aria-labelledby="soon-tab">
+                    <div class="row" style="margin-top: 2%">
+                        <div class="col-md-12 form-group">
+                            <div class="col-md-12">
+                                <h3><b>Formas de Pagamento:</b><h3>
                             </div>
-                            <div class="col-md-10">
-                                <div class="row" style="padding: 0 25px;">
-                                    <div class="col-md-4 form-group">
-                                        <label><b>Nome:</b></label>
-                                         <input id="nome_forma" name="nome_forma<?= $aux ?>" type="text" class="form-control" value="<?php echo $formaP['nome_forma']  ?>">
-                                         <input id="id" name="id_<?= $aux ?>" type="hidden" class="form-control" value="<?php echo $formaP['id_forma']  ?>">
-                                    </div>
-                                    <div class="col-md-3 form-group">
-                                        <label><b>% de acrescimo:</b></label>
-                                        <input id="cartao_acrescimo" name="cartao_crescimo<?= $aux ?>" type="text" class="form-control" value="<?php echo $formaP['acrescimo_forma']  ?>">
-                                    </div>
-                                    <div class="col-md-2 ">
-                                        <label><b>Exibir:</b></label>
-                                        <select id="cartao_ativo" name="cartao_ativo<?= $aux ?>" class="form-control">
-                                            <option value="1" <?php if($formaP['ativo_forma'] == 1){echo 'selected';} ?>>Ativo</option>
-                                            <option value="0" <?php if($formaP['ativo_forma'] == 0){echo 'selected';} ?>>Inativo</option>
-                                        </select>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <?php $aux++; } }else{?>
-                        <div class="row"id="formaPagamento0">
-                            <div class="col-md-2" style="text-align:-webkit-center;">
-                                <button id="buttonForma0" type="button" class="btn btn-success" onclick="novaforma(0)">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                            <div class="col-md-11">
-                                <div class="row" style="padding: 0 25px;">
-                                    <div class="col-md-3 form-group">
-                                        <label><b>Nome:</b></label>
-                                         <input id="nome_forma" name="nome_forma<?= $aux ?>" type="text" class="form-control" value="">
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <label><b>% de acrescimo:</b></label>
-                                        <input id="cartao_acrescimo" name="cartao_crescimo<?= $aux ?>" type="text" class="form-control" value="">
-                                    </div>
-                                    <div class="col-md-2 ">
-                                        <label><b>Exibir:</b></label>
-                                        <select id="cartao_ativo" name="cartao_ativo<?= $aux ?>" class="form-control">
-                                            <option value="1">Ativo</option>
-                                            <option value="1">Inativo</option>
-                                        </select>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <?php }?>
-                        <input id="cont" name="cont" type="hidden" class="form-control" value="<?= $aux?>">
-                    <br><br>
-                    <div class="row form-group">
-                        <div class="col-md-12" style="text-align: -webkit-center;">
-                            <button type="submit" class="btn btn-primary">Confirmar</button>
-                            &nbsp;&nbsp;
-                            <button type="button" class="btn btn-danger" onclick="reset()">Cancelar</button>
-                            <br><br>
+                            <hr style="width: 95%!important; border-top: 1px solid #79797959; margin-left: 2.5%!important; margin-top: 20px!important; margin-bottom: 20px!important;">
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="tab-pane fade" id="vendedores" role="tabpanel" aria-labelledby="vendedores-tab">
-                <div class="c-card">
-                    <div class="c-card-header">
-                        <div class="row">
-                            <div class="col-md-6 text-left">
-                                <h2 style="color: #1b9045;"><b>Listagem de vendedores</b></h2>
-                            </div>
-                            <form action="<?php echo base_url('edb728d5b2d758ff44b1b0e9f991ead9') ?>" method="post">
-                            <div class="col-md-6">
-                                <div class="button-area">
-                                    <button type="button" class="btn btn-primary" style="margin-right: 15px" title="Adicionar Item" data-toggle="modal" data-target="#vendedor_adicionarmodal"><em class="fa fa-plus"></em></button></a>
-                                    <div class="search-field">
-                                        <input type="text" id="search" name="filtro" class="form-control-custom" value="<?php if(isset($filtro)) { echo $filtro; } ?>">
-                                        <button style="cursor: pointer" class="btn btn-primary search"><em class="fa fa-search"></em></button>
-                                    </div>
+                    
+                    <form action="<?php echo base_url('admin/adminajustes/atualizarFormasPag') ?>" method="post">
+                        <?php if(count($formas_pagamento) > 0){;
+                            $var = count($formas_pagamento);
+                            $aux = 0; foreach($formas_pagamento as $formaP){?>
+                            <div class="row"id="formaPagamento<?php echo $aux;?>">
+                                <div class="col-md-2" style="text-align:-webkit-center;">
+                                    <?php if($var == $aux+1){ ?>
+                                    <button id="buttonForma<?php echo $aux;?>" type="button" class="btn btn-success" onclick="novaforma(<?php echo $aux;?>)">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                    <?php } ?>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="row" style="padding: 0 25px;">
+                                        <div class="col-md-4 form-group">
+                                            <label><b>Nome:</b></label>
+                                            <input id="nome_forma" name="nome_forma<?= $aux ?>" type="text" class="form-control" value="<?php echo $formaP['nome_forma']  ?>">
+                                            <input id="id" name="id_<?= $aux ?>" type="hidden" class="form-control" value="<?php echo $formaP['id_forma']  ?>">
+                                        </div>
+                                        <div class="col-md-3 form-group">
+                                            <label><b>% de acrescimo:</b></label>
+                                            <input id="cartao_acrescimo" name="cartao_crescimo<?= $aux ?>" type="text" class="form-control" value="<?php echo $formaP['acrescimo_forma']  ?>">
+                                        </div>
+                                        <div class="col-md-2 ">
+                                            <label><b>Exibir:</b></label>
+                                            <select id="cartao_ativo" name="cartao_ativo<?= $aux ?>" class="form-control">
+                                                <option value="1" <?php if($formaP['ativo_forma'] == 1){echo 'selected';} ?>>Ativo</option>
+                                                <option value="0" <?php if($formaP['ativo_forma'] == 0){echo 'selected';} ?>>Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div> 
                                 </div>
                             </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="c-card-body">
-                        <div class="table-responsive" style="width: 100%">
-                            <table class="table c-table" id="tabela">
-                            <thead>
-                                <tr>
-                                    <th style="width: 25%">Nome</th>
-                                    <th style="width: 25%">Whats</th>
-                                    <th style="width: 25%">Prioridade</th>
-        			                <th class="text-center" style="width: 25%">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach($vendedores as $v){ ?>
-                                <tr>
-                                    <td><?php echo ucwords(mb_strtolower($v['vendedor_nome'])); ?></td>
-                                    <td class="telefone"><?php echo $v['vendedor_whats'] ?></td>
-                                    <td><?php echo $v['vendedor_prioridade'] ?></td>
-                                    <td style="color: #1b9045; font-size: 22px!important" class="text-center">
-        			                    <a onclick="getVendedor(<?php echo $v['vendedor_id'] ?>)" style="color: #1b9045;" data-toggle="modal" data-target="#vendedor_vermodal"><i class="fa fa-eye" aria-hidden="true"></i></a>
-        			                    <a onclick="getVendedor(<?php echo $v['vendedor_id'] ?>)" style="color: #1b9045;" data-toggle="modal" data-target="#vendedor_editarmodal"><i style="padding-left: 12px;" class="fa fa-pencil" aria-hidden="true"></i></a>
-        			                    <i onclick="getVendedor(<?php echo $v['vendedor_id'] ?>)" data-toggle="modal" data-target="#vendedor_excluirmodal" style="padding-left: 12px; color: #1b9045" class="fa fa-trash" aria-hidden="true"></i>
-            			            </td>
-        			            </tr>   
-        			            <?php } ?>
-                            </tbody>
-                        </table>
-                        </div>
-                    </div>
-                    <?php if($vendedores == null) { ?>
-            		        <div class="col-md-12 text-center">
-            		            <p>Nenhuma vendedor encontrada!</p>
-            		        </div>
-        		        <?php } ?>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <p class="pagination-links"><?php echo $links; ?></p>
+                            <?php $aux++; } }else{?>
+                            <div class="row"id="formaPagamento0">
+                                <div class="col-md-2" style="text-align:-webkit-center;">
+                                    <button id="buttonForma0" type="button" class="btn btn-success" onclick="novaforma(0)">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="row" style="padding: 0 25px;">
+                                        <div class="col-md-3 form-group">
+                                            <label><b>Nome:</b></label>
+                                            <input id="nome_forma" name="nome_forma<?= $aux ?>" type="text" class="form-control" value="">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <label><b>% de acrescimo:</b></label>
+                                            <input id="cartao_acrescimo" name="cartao_crescimo<?= $aux ?>" type="text" class="form-control" value="">
+                                        </div>
+                                        <div class="col-md-2 ">
+                                            <label><b>Exibir:</b></label>
+                                            <select id="cartao_ativo" name="cartao_ativo<?= $aux ?>" class="form-control">
+                                                <option value="1">Ativo</option>
+                                                <option value="1">Inativo</option>
+                                            </select>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <?php }?>
+                            <input id="cont" name="cont" type="hidden" class="form-control" value="<?= $aux?>">
+                        <br><br>
+                        <div class="row form-group">
+                            <div class="col-md-12" style="text-align: -webkit-center;">
+                                <button type="submit" class="btn btn-primary">Confirmar</button>
+                                &nbsp;&nbsp;
+                                <button type="button" class="btn btn-danger" onclick="reset()">Cancelar</button>
+                                <br><br>
                             </div>
                         </div>
-                    <?php if(isset($produtos)){ ?>
-                        <?php if($produtos == null) { ?>
-            		        <div class="col-md-12 text-center">
-            		            <p>Nenhuma vendedor encontrada!</p>
-            		        </div>
-            		    <?php } ?>
-        		    <?php } ?>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <!--<p class="pagination-links"><?php echo $links; ?></p>-->
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="vendedores" role="tabpanel" aria-labelledby="vendedores-tab">
+                    <div class="c-card">
+                        <div class="c-card-header">
+                            <div class="row">
+                                <div class="col-md-6 text-left">
+                                    <h2 style="color: #1b9045;"><b>Listagem de vendedores</b></h2>
+                                </div>
+                                <form action="<?php echo base_url('edb728d5b2d758ff44b1b0e9f991ead9') ?>" method="post">
+                                <div class="col-md-6">
+                                    <div class="button-area">
+                                        <button type="button" class="btn btn-primary" style="margin-right: 15px" title="Adicionar Item" data-toggle="modal" data-target="#vendedor_adicionarmodal"><em class="fa fa-plus"></em></button></a>
+                                        <div class="search-field">
+                                            <input type="text" id="search" name="filtro" class="form-control-custom" value="<?php if(isset($filtro)) { echo $filtro; } ?>">
+                                            <button style="cursor: pointer" class="btn btn-primary search"><em class="fa fa-search"></em></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="c-card-body">
+                            <div class="table-responsive" style="width: 100%">
+                                <table class="table c-table" id="tabela">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%">Nome</th>
+                                        <th style="width: 25%">Whats</th>
+                                        <th style="width: 25%">Prioridade</th>
+                                        <th class="text-center" style="width: 25%">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($vendedores as $v){ ?>
+                                    <tr>
+                                        <td><?php echo ucwords(mb_strtolower($v['vendedor_nome'])); ?></td>
+                                        <td class="telefone"><?php echo $v['vendedor_whats'] ?></td>
+                                        <td><?php echo $v['vendedor_prioridade'] ?></td>
+                                        <td style="color: #1b9045; font-size: 22px!important" class="text-center">
+                                            <a onclick="getVendedor(<?php echo $v['vendedor_id'] ?>)" style="color: #1b9045;" data-toggle="modal" data-target="#vendedor_vermodal"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a onclick="getVendedor(<?php echo $v['vendedor_id'] ?>)" style="color: #1b9045;" data-toggle="modal" data-target="#vendedor_editarmodal"><i style="padding-left: 12px;" class="fa fa-pencil" aria-hidden="true"></i></a>
+                                            <i onclick="getVendedor(<?php echo $v['vendedor_id'] ?>)" data-toggle="modal" data-target="#vendedor_excluirmodal" style="padding-left: 12px; color: #1b9045" class="fa fa-trash" aria-hidden="true"></i>
+                                        </td>
+                                    </tr>   
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        <?php if($vendedores == null) { ?>
+                                <div class="col-md-12 text-center">
+                                    <p>Nenhuma vendedor encontrada!</p>
+                                </div>
+                            <?php } ?>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <p class="pagination-links"><?php echo $links; ?></p>
+                                </div>
+                            </div>
+                        <?php if(isset($produtos)){ ?>
+                            <?php if($produtos == null) { ?>
+                                <div class="col-md-12 text-center">
+                                    <p>Nenhuma vendedor encontrada!</p>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <!--<p class="pagination-links"><?php echo $links; ?></p>-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1202,7 +1203,7 @@
         $('.cep').mask('00000-000');
         $('.money').mask("#.##0,00", {reverse: true});
         
-        $('#payment-tab').click();
+        $('#correio-tab').click();
         
         $('#framework').multiselect({
             nonSelectedText: 'Estados',

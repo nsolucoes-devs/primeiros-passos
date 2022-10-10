@@ -314,4 +314,4 @@ switch (ENVIRONMENT)
  */
 require_once BASEPATH.'core/CodeIgniter.php';
 
-// session_destroy()
+// session_destroy();
