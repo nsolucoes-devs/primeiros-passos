@@ -184,9 +184,6 @@ class FinalizaUnico extends MY_Controller {
     
     public function finaliza2(){
         $this->session->unset_userdata('correio');
-
-        var_dump_pre($_POST);
-
         if($this->input->post('idProduto') !== null){
             if($this->session->userdata('carrinho')){
                 $produto = $this->produtos->get($this->input->post('idProduto'));
