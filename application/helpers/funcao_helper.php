@@ -3,24 +3,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-function dataDiaDb()
-{
-    date_default_timezone_set('America/Sao_paulo');
-    $formato = 'DATE_W3C';
-    $hora = time();
-    return standard_date($formato, $hora);
+function dataDiaDb(){
+    return date("Y-m-d H:i:s");
 }
 
-function dataDb()
-{
-    date_default_timezone_set('America/Sao_paulo');
-    $stringdedata = '%Y-%m-%d';
-    $data = time();
-    $data = mdate($stringdedata, $data);
-    return $data;
+function dataDb(){
+    return date("Y-m-d");;
 }
-function dataDia($data = NULL)
-{
+function samoel($text = ""){
+    echo "<h3 style='color:red'>SAMOEL MEXENDO</h3>";
+    print_r_pre($text);
+}
+
+function dataDia($data = NULL){
     if ($data) {
 
         //Entrada-> 1980/05/10     
@@ -31,8 +26,9 @@ function dataDia($data = NULL)
     }
 }
 
-function formataDataDb($data = NULL)
-{
+
+
+function formataDataDb($data = NULL){
     if ($data) {
 
         //Entrada-> 10/05/1980        
@@ -43,11 +39,10 @@ function formataDataDb($data = NULL)
     }
 }
 
-function formataDataDbView($data = NULL)
-{
+function formataDataDbView($data = NULL){
     if ($data) {
 
-        //Entrada-> 1980/05/10     
+        //Entrada-> 1980-05-10     
         $data = explode("-", $data);
 
         //Saída - >10/05/1980 
@@ -55,16 +50,24 @@ function formataDataDbView($data = NULL)
     }
 }
 
-function formatarMoedaReal($valor=NULL, $real=FALSE)
-{
+function datadbDMA($data = NULL){
+    if ($data) {
 
+        //Entrada-> 1980-05-10     
+        $data = explode("-", $data);
+
+        //Saída - >10/05/1980 
+        return $data[0] . '/' . $data[1] . '/' . $data[2];
+    }
+}
+
+function formatarMoedaReal($valor=NULL, $real=FALSE){
     if ($valor) {
 
         $valor = ($real == TRUE ? 'R$ ' : ''). number_format($valor, 2, ',', '.');
         return $valor;
     }
 }
-
 
 function formatoDecimal($valor=NULL)
 {
@@ -147,4 +150,114 @@ function removerCaracteresEspeciaiss($str){
         }
     }
     return $str_saida;
+}
+
+function mascararNumero($numero, $tipo){
+    $mask = "";
+    
+    if($tipo =="documento"){
+        if(strlen($numero) == 11){
+            $mask = '###.###.###-##';
+        }elseif(strlen($numero) == 14){
+            $mask = '##.###.###/####-##';
+        }
+    }elseif($tipo =="cep"){
+        $mask = '#####-###';
+    }elseif($tipo =="telefone"){
+        if(strlen($numero) == 10){
+            $mask = '(##) ####-####';
+        }elseif(strlen($numero) == 11){
+            $mask = '(##) # ####-####';
+        }
+    }elseif($tipo =="misto"){
+        $mask = '###.###.###';
+    }
+    $maskared = '';
+    $k = 0;
+    for ($i = 0; $i <= strlen($mask) - 1; ++$i) {
+        if ($mask[$i] == '#') {
+            if (isset($numero[$k])) {
+                $maskared .= $numero[$k++];
+            }
+        } else {
+            if (isset($mask[$i])) {
+                $maskared .= $mask[$i];
+            }
+        }
+    }  
+    return $maskared;
+}
+
+function Firstlette($word){
+    return ucfirst(strtolower($word));
+}
+
+function Firstword($word){
+    return ucwords(strtolower($word));
+}
+
+function print_r_pre($array, $title = NULL){
+    echo '<pre>';
+        echo $title ? '<h1>'. $title .'</h1>' : '';
+        print_r($array);
+    echo '</pre>';
+}
+
+function var_dump_pre($array, $title = NULL){
+    echo '<pre>';
+        echo $title ? '<h1>'. $title .'</h1>' : '';
+        var_dump($array);
+    echo '</pre>';
+}
+
+function getnamestatus($id){
+    switch ($id) {
+        case  "1";
+            $status = "Não Finalizado";
+            break;
+        case  "2";
+            $status = "Ajustes";
+            break;
+        case  "3";
+            $status = "Retirada";
+            break;
+        case  "4";
+            $status = "Devolução";
+            break;
+        case  "5";
+            $status = "Finalizado";
+            break;
+    }
+    return  $status;
+}
+
+function url_exists($url) {
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_NOBODY, true);
+    curl_exec($ch);
+    $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    return ($code == 200); // verifica se recebe "status OK"
+}
+
+function getFotos() {
+    $aleatorios = array(
+        "https://images.stylight.net/image/upload/t_web_post_500x667/q_auto,f_auto/post-d4e0264973c325de80b0f8027e50811f9584a694923c3df213388cb7.jpg",
+        "https://i.pinimg.com/736x/cd/78/f1/cd78f15f5b15893f6a78b416fe0bf522.jpg",
+        "https://lapisdenoiva.com/wp-content/uploads/2020/03/vestido-de-noiva-ternos-e-blazers-1.jpg",
+        "https://st4.depositphotos.com/9037414/23563/i/450/depositphotos_235631336-stock-photo-love-you-much-beautiful-stylish.jpg"
+    );
+    $fotos = array();
+    for ($i = 1; $i <= 8; $i++) {
+        $dirname = base_url('imagens/trajes/capa_' . $i .".jpg");
+        if(url_exists($dirname)){
+        $fotos[$i] = $dirname;
+        }else{
+            $fotos[$i] = $aleatorios[array_rand($aleatorios, 1)];
+        }
+        
+    }
+    
+    return $fotos;
 }

@@ -141,7 +141,7 @@ class FinalizaUnico extends MY_Controller {
         $data['formacartao']   = $this->formaspagamento->get('cartao');
         $data['formaboleto']   = $this->formaspagamento->get('boleto');
         $data['formatransfer'] = $this->formaspagamento->get('transferencia');
-        
+
         $this->acessoVenda();
 
         $this->header();
@@ -150,7 +150,7 @@ class FinalizaUnico extends MY_Controller {
     }
     
     public function esquecerSenha(){
-        $this->include();
+        
         
         $cpf    = $this->limpa($this->input->post('cpf-esquecer'));
         $email  = mb_strtoupper($this->input->post('email-esquecer'));
@@ -184,6 +184,9 @@ class FinalizaUnico extends MY_Controller {
     
     public function finaliza2(){
         $this->session->unset_userdata('correio');
+
+        var_dump_pre($_POST);
+
         if($this->input->post('idProduto') !== null){
             if($this->session->userdata('carrinho')){
                 $produto = $this->produtos->get($this->input->post('idProduto'));
@@ -356,6 +359,7 @@ class FinalizaUnico extends MY_Controller {
                 }
                 
                 for($i=0; $i<count($pdt); $i++){
+
                     //$a = $this->carrinhomodel->rescueProduct($pdt[$i]);
                     $a = $this->carrinhomodel->getProdutoSite($pdt[$i]);
                     $b = $this->carrinhomodel->getValorSite($pdt[$i]);
@@ -418,8 +422,9 @@ class FinalizaUnico extends MY_Controller {
                 $qtd = number_format($aux['qtdProdutos'], 2, ",", ".");
             }
             
-        
             for($i=0; $i<count($pdt); $i++){
+
+                
                 //$a = $this->carrinhomodel->rescueProduct($pdt[$i]);
                 $a = $this->carrinhomodel->getProdutoSite($pdt[$i]);
                 $b = $this->carrinhomodel->getValorSite($pdt[$i]);

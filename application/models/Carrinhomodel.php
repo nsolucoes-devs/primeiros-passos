@@ -280,7 +280,7 @@ class Carrinhomodel extends CI_Model {
         unset($a['produto_cores']);
         
         $this->db->select("sum(estoque_quantidade) as estoque_quantidade, estoque_produto, estoque_loja");
-        $this->db->where('estoque_loja =', $a['estoque_loja']);
+        // $this->db->where('estoque_loja =', $a['estoque_loja']);
         $this->db->where('estoque_produto =', $a['estoque_produto']);
         $this->db->group_by("estoque_produto");
         $estoques = $this->db->get('estoque')->row_array();
@@ -310,7 +310,7 @@ class Carrinhomodel extends CI_Model {
         $a = $this->db->get('produtos')->row_array();
         
         $this->db->select("estoque_valor");
-        $this->db->where('estoque_loja =', 25);
+        // $this->db->where('estoque_loja =', 25);
         $this->db->where('estoque_produto =', $a['produto_nome']);
         $this->db->order_by("estoque_id", 'DESC');
         $this->db->limit(1);
