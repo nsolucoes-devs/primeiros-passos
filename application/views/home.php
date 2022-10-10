@@ -387,52 +387,7 @@
     </section>
     <!-- ##### Produtos End ###### -->
     <br>
-    <?php if($mobile == 0){ ?>
-    <div class="container-fluid" style="padding: 0px 117px!important;">
-        <div class="row">
-            <div class="col-md-4">
-                <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="background-size: 100% 100%; background-color: #f9fdff!important;background-image: url('<?php echo base_url() ?>imagens/banner_pequeno1.jpg'); background-repeat: no-repeat; padding-top: 0!important">
-                    <div class="container-fluid" style="padding-top: 2%;padding-bottom: 60%; z-index: 1">
-            
-                    </div>
-                </section>
-            </div>
-            
-            <div class="col-md-4">
-                <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="background-size: 100% 100%; background-position: right; background-color: #f9fdff!important;background-image: url('<?php echo base_url() ?>imagens/banner_pequeno2.jpg'); background-repeat: no-repeat; padding-top: 0!important">
-                    <div class="container-fluid" style="padding-top: 2%;padding-bottom: 60%; z-index: 1">
-                    </div>
-                </section>
-            </div>
-            
-            <div class="col-md-4">
-                <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="background-size: 100% 100%; background-position: right; background-color: #f9fdff!important;background-image: url('<?php echo base_url() ?>imagens/banner_pequeno3.jpg'); background-repeat: no-repeat; padding-top: 0!important">
-                    <div class="container-fluid" style="padding-top: 2%;padding-bottom: 60%; z-index: 1">
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-    <?php } else { ?>
     
-    <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="border-radius: 10px;margin: 5% 15%;background-size: 100% 100%; background-color: #f9fdff!important;background-image: url('<?php echo base_url() ?>imagens/banner_pequeno1.jpg'); background-repeat: no-repeat; padding-top: 0!important">
-        <div class="container-fluid" style="padding-top: 2%;padding-bottom: 50%; z-index: 1">
-
-        </div>
-    </section>
-
-    <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="border-radius: 10px;margin: 5% 15%;background-size: 100% 100%; background-position: right; background-color: #f9fdff!important;background-image: url('<?php echo base_url() ?>imagens/banner_pequeno2.jpg'); background-repeat: no-repeat; padding-top: 0!important">
-        <div class="container-fluid" style="padding-top: 2%;padding-bottom: 50%; z-index: 1">
-        </div>
-    </section>
-    
-    <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="border-radius: 10px;margin: 5% 15%;background-size: 100% 100%; background-position: right; background-color: #f9fdff!important;background-image: url('<?php echo base_url() ?>imagens/banner_pequeno3.jpg'); background-repeat: no-repeat; padding-top: 0!important">
-        <div class="container-fluid" style="padding-top: 2%;padding-bottom: 50%; z-index: 1">
-        </div>
-    </section>
-    
-    
-    <?php } ?>
     <br><br><br><br>
     <!-- ##### Call To Action Start ###### -->
     <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="background-image: url('<?php echo base_url() . $site['banner_contato'] ?>'); background-size: cover; padding-top: 0!important">
