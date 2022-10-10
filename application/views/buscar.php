@@ -165,7 +165,7 @@
                             <div class="col-lg-3 col-md-4 col-6 form-group produtos-div">
                                 <a href="<?php echo base_url('71b141ddd8292dea8bb362092fd5661f/'). $p['produto_id'] ?>">
                                 <div class="card zoom card_prod">
-                                    <div class="card-body" style="padding: 2px;">
+                                    <div class="card-body text-center" style="padding: 2px;">
                                         <img class="imagem_prod" src="<?php echo base_url('imagens/produtos/').$p['produto_id'] .'.jpg'; ?>" alt="">
                                         <?php if(isset($p['produto_porcentagem'])){ ?>
                                             <p class="produto-desconto"><i class="fa fa-arrow-down" aria-hidden="true"></i> <?php $p['produto_porcentagem'] ?></p>

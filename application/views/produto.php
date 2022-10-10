@@ -395,7 +395,7 @@
                                 <div class="col-md-6">
                                     <?php if($produto){ ?>
                                         <?php if($produto['produto_modelo']){ ?>
-                                            <p style="color: grey">Marca: <?php echo ucwords(mb_strtolower($produto['produto_modelo'])) ?></p>
+                                            <p style="color: grey">Marca: <?php echo ucwords(mb_strtolower($produto['produto_marca'])) ?></p>
                                         <?php } ?>
                                     <?php } ?>
                                 </div>
