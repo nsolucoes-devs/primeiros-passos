@@ -378,7 +378,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?php echo base_url('admin/admindepartamentos/updateSub') ?>" method="post">
+      <form action="<?php echo base_url('admin/admindepartamentos/editSub') ?>" method="post">
           <input type="hidden" id="edit_id" name="id">
           <div class="modal-body">
               <div class="row">

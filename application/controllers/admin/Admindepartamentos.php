@@ -266,24 +266,25 @@ class Admindepartamentos extends Admin_Controller {
         redirect(base_url('admin/admindepartamentos/subDepartamentos'));
     }
     
-    public function editSub(){
-        
+    public function editSub(){       
         
         if($this->input->post('onmenu') == null || $this->input->post('onmenu') == 0){
             $onmenu = 0;
         } else {
             $onmenu = 1;
         }
-        
+
+        $id_dep = addslashes($_POST['id']);
+
         $departamento = array(
-            'departamento_nome'         => $this->input->post('nome'),    
-            'departamento_descricao'    => $this->input->post('descricao'),
-            'departamento_pai'          => $this->input->post('departamento'),
+            'departamento_nome'         => addslashes($_POST['nome']),    
+            'departamento_descricao'    => @addslashes($_POST['descricao']),
+            'departamento_pai'          => addslashes($_POST['departamento']),
             'departamento_situacao'     => 1,
             'departamento_onmenu'       => $onmenu,
         );
         
-        $this->departamentos->update($departamento);
+        $this->departamentos->update($id_dep, $departamento);
         
         $this->session->set_userdata('alert', 2);
         
