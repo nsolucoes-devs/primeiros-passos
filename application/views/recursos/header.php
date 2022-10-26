@@ -356,7 +356,11 @@
                 background: var(--base-color);
             }
         }
-        
+        #ul-departamentos > ul {
+            display: grid;
+            grid-template-columns: repeat(7,minmax(0,1fr));
+            gap: 10px;
+        }
     </style>
     
     <!-- Preloader -->
@@ -466,7 +470,7 @@
                             <?php } ?>
         
                             <!-- Nav Start -->
-                            <div class="classynav">
+                            <div id="ul-departamentos" class="classynav">
                                 <ul>
                                     <?php foreach($departamentos as $dep){?>
                                     <li><a onclick="Submit2('<?php echo $dep['departamento_id'];?>')" href="#"><?php echo $dep['departamento'];?><?php if(array_key_exists('subs', $dep)){?>&nbsp;<?php } ?></a>

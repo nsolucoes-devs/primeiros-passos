@@ -256,6 +256,7 @@
 </style>
 <?php } ?>
 
+<!-- Cookies -->
 <div class="row" id="div_cookies" style="display: none">
     <div class="cookie-pc">
         <div class="cookie-10">
@@ -273,7 +274,6 @@
         </div>
     </div>
 </div>
-
 <div class="row new-cookie" id="new-cookie">
     <div class="cookie-pc col-md-12">
         <div class="row">
@@ -297,9 +297,9 @@
         </div>
     </div>
 </div>
+<!-- End Cookies -->
 
 <main style="position: relative; padding-top: 55px; background: #fbf7ef;">
-    
     <div id="main_banner" class="carousel slide banner_top" data-ride="carousel">
         <?php if($mobile_view == 0){ ?>
         <ol class="carousel-indicators custom-indicator">
