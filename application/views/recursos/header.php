@@ -142,9 +142,6 @@
             display: contents;
         }
         
-        .classynav ul li {
-            margin-right: -10px!important;
-        }
         .classynav li a:hover {
             color: var(--base-color)!important;
         }
@@ -153,14 +150,6 @@
             box-shadow: none;
             border: 0;
         }
-        #busca{
-            border-radius: 5px;
-            background: white!important;
-            width: 500px;
-            height: 50px;
-            margin-top: -5px;
-            margin-right: 66px;
-        }
 
         .tooltip-inner {
             background: var(--base-color);
@@ -168,8 +157,7 @@
         
         li a:hover{
             color: #444!important;
-        }
-        
+        }      
         .breakpoint-on .classynav {
             text-align: left;
         }
@@ -203,8 +191,17 @@
             bottom: 40px;
         }
         
+        #busca-icone-topo {
+            color: var(--base-color);
+            font-size: 27px;
+            position: relative;
+            left: 93%;
+            bottom: 34px;
+        }
+
         .classy-navbar-toggler .navbarToggler span {
             background-color: #ffffff;
+            z-index: 100;
         }
         
         .breakpoint-on .classynav > ul > li > a{
@@ -244,6 +241,8 @@
         }
         
         #busca-baixo{
+            width: 100px;
+            margin: 0 50px;
             display: none;
         }
         #busca-topo{
@@ -259,9 +258,6 @@
             }
             .classy-navbar{
                padding-left: 1%!important;
-           }
-           .classynav ul li{
-               margin-left: 25px!important;
            }
         }
         
@@ -281,11 +277,6 @@
                 position: relative;
                 top: 1px;
                 left: -40px;
-            }
-            #busca{
-                width: 400px!important;
-                margin-top: -13px!important;
-                margin-right: 150px!important;
             }
         }
         
@@ -328,14 +319,12 @@
             }
             #busca {
                 background: white!important;
-                width: 300px!important;
                 height: 40px!important;
                 margin-right: 0!important;
                 margin-top: -13px!important;
             }
             #busca-icone {
-                left: 130px;
-                bottom: 55px;
+                left: 72px;
             }
             .classynav ul li {
                 margin-left: 0!important;
@@ -357,9 +346,20 @@
             }
         }
         #ul-departamentos > ul {
-            display: grid;
-            grid-template-columns: repeat(7,minmax(0,1fr));
-            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* display: grid; */
+            /* grid-template-columns: repeat(7,minmax(0,1fr)); */
+        }
+
+        .nav-item:hover ~ .nav-item {
+            pointer-events: none;
+        }
+
+
+        #departamentos-mobile > .nav-item {
+            font-size: 74px !important;
         }
     </style>
     
@@ -388,22 +388,43 @@
                         </div>
                         
                         <?php if($mobile == 0){  ?>
-                            <div id="busca-topo" class="contact search-div" style="margin-right: -15px!important">
+                            <div id="busca-topo" class="contact search-div" style="width: 450px">
                                 <label>&nbsp;</label>
                                 <form id="buscador" action="<?php echo base_url('produto/buscaProdutos');?>" method="post">
                                     <input autocomplete="off" id="busca" name="busca" type="text" placeholder="Busque seu produto" class="form-control">
-                                    <i onclick="Submit()" id="busca-icone" class="fa fa-search" aria-hidden="true"></i>
+                                    <i onclick="Submit()" id="busca-icone-topo" class="fa fa-search" aria-hidden="true"></i>
                                     <div class="box-search" style="display: block; background: white;position: fixed;width: 250px;">
                                 </form>
                                 </div>
                             </div>
+                        <?php } else { ?>
+
+                        <!-- Contact -->
+                        <div id="busca-baixo" class="contact search-div">
+                            <label>&nbsp;</label>
+                            <form id="buscador" action="<?php echo base_url('produto/buscaProdutos');?>" method="post">
+                                <input autocomplete="off" id="busca" name="busca" type="text" placeholder="Busca" class="form-control">                                
+                                <a type="submit" id="busca-icone">
+                                    <i onclick="Submit()" class="fa fa-search" aria-hidden="true"></i>
+                                </a>
+                                <div class="box-search" style="display: block; background: white;position: fixed;width: 250px;">
+                            </form>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
                         <?php } ?>
+
 
                         <!-- Top Contact Info -->
                         <div class="top-contact-info d-flex align-items-center" style="<?php if($mobile == 0){ echo 'margin-top:  -5px;'; } ?>">
                             <?php if($mobile == 0){ ?>
                                 <a href="<?php echo base_url('inicio/contato') ?>" class="icones-header"><i style="color: white; font-size: 35px;" class="fa fa-whatsapp" aria-hidden="true"></i> <span style="color: white"></span></a>
-                                <div class="position-relative" style="margin-right: 40px;">
+                                <!-- <div class="position-relative" style="margin-right: 40px;">
                                     <a class="icones-header" href="<?php echo base_url('b920e92e9e4616300f9b7e6f3fd78635') ?>">
                                         <i style="font-size: 35px; color: white" class="fa fa-shopping-basket" aria-hidden="true"></i> 
                                         <span style="color: white"> 
@@ -412,17 +433,17 @@
                                             <?php } ?>
                                         </span>
                                     </a>
-                                </div>
+                                </div> -->
                             <?php } else { ?>
-                                <a id="icone-carrinho" href="<?php echo base_url('b920e92e9e4616300f9b7e6f3fd78635') ?>" class="icones-header">
+                                <!-- <a id="icone-carrinho" href="<?php echo base_url('b920e92e9e4616300f9b7e6f3fd78635') ?>" class="icones-header">
                                     <i style="color: white; font-size: 25px;" class="fa fa-shopping-basket" aria-hidden="true">
                                         <p id="carrinho-qtd"><?php echo $this->session->userdata('quantidade_carrinho') ?></p>
                                     </i>
-                                </a>
+                                </a> -->
                             <?php } ?>
                             
                             
-                            <?php if($this->session->userdata('cliente_logado')){ ?>
+                            <!-- <?php if($this->session->userdata('cliente_logado')){ ?>
                                 <?php if($this->session->userdata('cliente_logado') == 1){ ?>
                                     <?php
                                         $cliente_nome = $this->session->userdata('cliente_nome');
@@ -437,7 +458,9 @@
                                 <?php } ?>
                             <?php } else { ?>
                                 <a id="icone-conta" class="icones-header" href="<?php echo base_url('2b1e190210df261675c4b801bc6e8989') ?>"><i style="color: white; font-size: 25px;" class="fa fa-user-circle" aria-hidden="true"></i> <span style="color: white"> &nbsp;Minha Conta</span></a>
-                            <?php } ?></div>
+                            <?php } ?> -->
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -448,60 +471,88 @@
             <div class="classy-nav-container breakpoint-off" style="width: 100%!important;">
                 <div class="text-center">
                     <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="creditNav" style="padding-left: calc(10% - 5px); background: var(--base-color);">
+                    <nav class="classy-navbar justify-content-between" id="creditNav" <?php if($mobile == 1){ echo 'style="height: 0px !important;"';} ?>>
 
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler" style="padding-left: 4%;">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
 
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-                            
+                        <!-- Menu Desktop -->
                             <?php if($mobile == 0){ ?>
-                                <a id="logo2" href="<?php echo base_url() ?>" style="height: 80%; position: absolute;left: 22px;top: 5px;display: none;">
-                                    <img style="animation: fadeIn 1.4s; height: 100%; width: auto;" src="<?php echo base_url('imagens/site/logo.png') ?>">
-                                </a>
-                            <?php } ?>
-        
-                            <!-- Nav Start -->
-                            <div id="ul-departamentos" class="classynav">
-                                <ul>
-                                    <?php foreach($departamentos as $dep){?>
-                                    <li><a onclick="Submit2('<?php echo $dep['departamento_id'];?>')" href="#"><?php echo $dep['departamento'];?><?php if(array_key_exists('subs', $dep)){?>&nbsp;<?php } ?></a>
-                                        <?php if(array_key_exists('subs', $dep)){?>
-                                            <ul class="dropdown">
-                                                <?php foreach($dep['subs'] as $sub){?>
-                                                    <li><a style="margin-left: -8px;" onclick="Submit2('<?php echo $sub['id'];?>')" href="#"><?php echo $sub['nome'];?></a></li>
+                                <div class="classy-menu-desktop mx-auto">
+
+                                    <?php if($mobile == 0){ ?>
+                                        <a id="logo2" href="<?php echo base_url() ?>" style="height: 80%; position: absolute;left: 22px;top: 5px;display: none;">
+                                            <img style="animation: fadeIn 1.4s; height: 100%; width: auto;" src="<?php echo base_url('imagens/site/logo.png') ?>">
+                                        </a>
+                                    <?php } ?>
+
+                                    <!-- Nav Start -->
+
+                                        <div id="ul-departamentos" class="classynav container">
+                                            <ul>
+                                                <?php foreach($departamentos as $dep){?>
+                                                <li class="nav-item"><a onclick="Submit2('<?php echo $dep['departamento_id'];?>')" href="#"><?php echo $dep['departamento'];?><?php if(array_key_exists('subs', $dep)){?>&nbsp;<?php } ?></a>
+                                                    <?php if(array_key_exists('subs', $dep)){?>
+                                                        <ul class="dropdown">
+                                                            <?php foreach($dep['subs'] as $sub){?>
+                                                                <li><a style="margin-left: -8px;" onclick="Submit2('<?php echo $sub['id'];?>')" href="#"><?php echo $sub['nome'];?></a></li>
+                                                            <?php }?>
+                                                        </ul>
+                                                    <?php }?>
+                                                </li>
                                                 <?php }?>
                                             </ul>
+                                        </div>
+
+                                    <!-- Nav End -->
+                                    </div>
+
+                        <!-- /Menu Desktop -->
+                            <?php } else { ?>
+                        <!-- Menu Mobile -->
+                        <div class="classy-menu mx-auto">
+                            
+        
+                            <!-- Nav Start -->
+                            
+                                <div id="departamentos-mobile" class="container">
+                                    <ul class="p-2">
+                                        <?php foreach($departamentos as $key => $dep){?>
+                                        <li class="text-left mb-2">
+                                            <strong><a style="font-size: 18px; font-weight:700" onclick="Submit2('<?php echo $dep['departamento_id'];?>')" href="#"><?php echo $dep['departamento'];?></a></strong>
+                                            <?php if(array_key_exists('subs', $dep)): ?>
+                                            <i class="fa fa-angle-down fa-2x mt-2" style="color: var(--base-color);" id="trigger_<?= $key ?>" aria-hidden="true"></i>
+                                            <?php endif ?>
+                                            <?php if(array_key_exists('subs', $dep)){?>
+                                                <ul class="d-none pt-2" id="triggered_<?= $key ?>">
+                                                    <?php foreach($dep['subs'] as $sub){?>
+                                                        <li><a style="margin-left: 8px;" onclick="Submit2('<?php echo $sub['id'];?>')" href="#"><?php echo $sub['nome'];?></a></li>
+                                                    <?php }?>
+                                                </ul>
+                                            <?php }?>
+                                        </li>
+                                        <script>
+                                            $("#trigger_<?= $key ?>").click(function() {
+                                                $("#triggered_<?= $key ?>").toggleClass("d-none");
+                                            });
+                                        </script>
                                         <?php }?>
-                                    </li>
-                                    <?php }?>
-                                </ul>
-                            </div>
+                                    </ul>
+                                </div>
+
+                                <div class="d-flex" style="background-color: var(--base-color);">
+                                    <a href="<?php echo base_url() ?>">
+                                        <img style="animation: fadeIn 1.4s; height: 100%; width: auto;" src="<?php echo base_url('imagens/site/logo.png') ?>">
+                                    </a>
+                                    <p class="text-center"><i style="font-size: 18px" class="fa fa-whatsapp" aria-hidden="true"></i>&nbsp; +55 <span class="telefone"><?php echo $telefone ?></span></span></p>
+                                    <a href="<?php echo base_url('inicio/contato') ?>" class="icones-header"><i style="color: white; font-size: 35px;" class="fa fa-whatsapp" aria-hidden="true"></i> <span style="color: white"></span></a>
+                                </div>
+                            
                             <!-- Nav End -->
                         </div>
+                        <!-- /Menu Mobile -->
 
-                        <?php if($mobile == 1){  ?>
-                        <!-- Contact -->
-                        <div id="busca-baixo" class="contact search-div">
-                            <label>&nbsp;</label>
-                            <form id="buscador" action="<?php echo base_url('produto/buscaProdutos');?>" method="post">
-                                <input autocomplete="off" id="busca" name="busca" type="text" placeholder="Busca" class="form-control">                                
-                                <a type="submit" id="busca-icone">
-                                    <i onclick="Submit()" class="fa fa-search" aria-hidden="true"></i>
-                                </a>
-                                <div class="box-search" style="display: block; background: white;position: fixed;width: 250px;">
-                            </form>
-                            </div>
-                        </div>
                         <?php } ?>
+
+
                     </nav>
                 </div>
             </div>

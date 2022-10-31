@@ -36,7 +36,6 @@ img {
 
 .classy-nav-container {
   position: relative;
-  z-index: 100;
   background-color: #ffffff;
   /* sticky */ }
   .classy-nav-container * {
@@ -150,14 +149,14 @@ img {
   content: "\e900"; }
 
 .classynav ul li.megamenu-item > a:after,
-.classynav ul li.has-down > a:after {
+/* .classynav ul li.has-down > a:after {
   font-family: 'classyfonts';
   content: "\e900";
   font-size: 12px;
   color: #000000;
   padding-left: 5px;
   -webkit-transition-duration: 500ms;
-  transition-duration: 500ms; }
+  transition-duration: 500ms; } */
 
 .classynav ul li ul li.has-down > a::after {
   -webkit-transform: rotate(-90deg);
@@ -231,7 +230,9 @@ img {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  display: none; }
+  margin-top: 20px;
+  margin-right:  -12px;
+}
   .classy-navbar-toggler .navbarToggler {
     display: inline-block;
     cursor: pointer; }
@@ -334,12 +335,12 @@ img {
   -ms-grid-row-align: center;
   align-items: center; }
 .breakpoint-off .classynav ul li .dropdown {
-  width: 180px;
+  text-align: start;
+  min-width: max-content;
   position: absolute;
   background-color: #ffffff;
   top: 120%;
   left: 0;
-  z-index: 100;
   height: auto;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   -webkit-transition-duration: 300ms;
@@ -425,7 +426,6 @@ img {
   clear: both;
   z-index: 10; }
   .breakpoint-on .classynav ul li a {
-    padding: 0 10px;
     height: 38px;
     line-height: 38px; }
   .breakpoint-on .classynav ul li .dropdown {
@@ -508,7 +508,8 @@ img {
 .dark .classy-navbar-toggler .navbarToggler span {
   background-color: #ffffff; }
 .dark.breakpoint-on .classy-navbar .classy-menu {
-  background-color: #192a56; }
+  background: var(--base-color);
+}
 .dark .classycloseIcon .cross-wrap span {
   background-color: #ffffff; }
 .dark.breakpoint-on .classynav > ul > li > a {
