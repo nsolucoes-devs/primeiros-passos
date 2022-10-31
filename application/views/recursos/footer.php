@@ -69,7 +69,6 @@
         .footer-area {
             padding-top: 50px !important;
             padding-bottom: 0 !important;
-            border-top: 1px solid var(--base-color);
         }
 
         @media only screen and (max-width: 600px) {
