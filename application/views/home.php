@@ -42,10 +42,6 @@
             padding-bottom: 100px;
         }
 
-        .cta-2-area {
-            background-color: #00000040;
-        }
-
         .produto-desconto {
             position: absolute;
             top: 10px;
@@ -182,7 +178,6 @@
         .banner-final {
             padding-top: 2%;
             padding-bottom: 5%;
-            background: #0000005c;
             z-index: 1
         }
 
@@ -428,13 +423,13 @@
 
     <br><br><br><br>
     <!-- ##### Imagem Final Start ###### -->
-    <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="background-image: url('<?php echo base_url() . $site['banner_contato'] ?>'); background-size: cover; padding-top: 0!important">
+    <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms" style="background-image: url('<?php echo base_url() . $site['banner_contato'] ?>'); padding-top: 0!important; background-repeat: no-repeat; background-size: cover; background-position: center;">
         <div class="container-fluid banner-final">
             <div class="row">
 
                 <div class="col-12">
                     <!-- Cta Content -->
-                    <div class="cta-content d-flex flex-wrap align-items-center justify-content-between" style="padding-top: 4%; padding-left: 15%; height: 12rem; width: 100%">
+                    <div class="cta-content d-flex flex-wrap align-items-center justify-content-between" style="padding-top: 4%; padding-left: 15%; height: 18rem; width: 100%">
                         <div class="cta-text" style="margin-bottom: -1%!important;">
 
                         </div>

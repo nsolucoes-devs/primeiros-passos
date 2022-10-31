@@ -508,7 +508,7 @@
                         <!-- /Menu Desktop -->
                             <?php } else { ?>
                         <!-- Menu Mobile -->
-                        <div class="classy-menu mx-auto">
+                        <div class="classy-menu mx-auto d-flex flex-column justify-content-between">
                             
         
                             <!-- Nav Start -->
@@ -516,15 +516,15 @@
                                 <div id="departamentos-mobile" class="container">
                                     <ul class="p-2">
                                         <?php foreach($departamentos as $key => $dep){?>
-                                        <li class="text-left mb-2">
+                                        <li class="text-left p-2">
                                             <strong><a style="font-size: 18px; font-weight:700" onclick="Submit2('<?php echo $dep['departamento_id'];?>')" href="#"><?php echo $dep['departamento'];?></a></strong>
                                             <?php if(array_key_exists('subs', $dep)): ?>
-                                            <i class="fa fa-angle-down fa-2x mt-2" style="color: var(--base-color);" id="trigger_<?= $key ?>" aria-hidden="true"></i>
+                                            <i class="fa fa-angle-down" style="font-size: 22px; color: var(--base-color); transform: translateY(4px);" id="trigger_<?= $key ?>" aria-hidden="true"></i>
                                             <?php endif ?>
                                             <?php if(array_key_exists('subs', $dep)){?>
                                                 <ul class="d-none pt-2" id="triggered_<?= $key ?>">
                                                     <?php foreach($dep['subs'] as $sub){?>
-                                                        <li><a style="margin-left: 8px;" onclick="Submit2('<?php echo $sub['id'];?>')" href="#"><?php echo $sub['nome'];?></a></li>
+                                                        <li><a class="mt-2" style="margin-left: 8px;" onclick="Submit2('<?php echo $sub['id'];?>')" href="#"><?php echo $sub['nome'];?></a></li>
                                                     <?php }?>
                                                 </ul>
                                             <?php }?>
@@ -538,20 +538,24 @@
                                     </ul>
                                 </div>
 
-                                <div class="d-flex" style="background-color: var(--base-color);">
-                                    <a href="<?php echo base_url() ?>">
-                                        <img style="animation: fadeIn 1.4s; height: 100%; width: auto;" src="<?php echo base_url('imagens/site/logo.png') ?>">
+                                <div class="d-flex p-2 align-items-center" style="background-color: var(--base-color);">
+                                    <a class="col-4 mr-auto" href="<?php echo base_url() ?>">
+                                        <img src="<?php echo base_url('imagens/site/logo.png') ?>">
                                     </a>
-                                    <p class="text-center"><i style="font-size: 18px" class="fa fa-whatsapp" aria-hidden="true"></i>&nbsp; +55 <span class="telefone"><?php echo $telefone ?></span></span></p>
-                                    <a href="<?php echo base_url('inicio/contato') ?>" class="icones-header"><i style="color: white; font-size: 35px;" class="fa fa-whatsapp" aria-hidden="true"></i> <span style="color: white"></span></a>
+                                    <p class="text-center text-white"><?php echo $telefone; ?> telefone aqui </p>
+                                    <a href="<?php echo base_url('inicio/contato') ?>" class="col-2 icones-header ml-auto mr-2"><i style="color: white; font-size: 35px;" class="fa fa-whatsapp" aria-hidden="true"></i> <span style="color: white"></span></a>
                                 </div>
-                            
                             <!-- Nav End -->
                         </div>
                         <!-- /Menu Mobile -->
 
                         <?php } ?>
 
+                        <?php 
+
+                        print_r($site);
+
+                        ?>
 
                     </nav>
                 </div>
