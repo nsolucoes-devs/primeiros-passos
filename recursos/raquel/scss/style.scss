@@ -566,7 +566,6 @@ img {
         .classy-navbar {
             height: 85px;
             padding: 0;
-            background-color: var(--base-color-second);
             @media #{$breakpoint-xs} {
                 height: 70px;
             }

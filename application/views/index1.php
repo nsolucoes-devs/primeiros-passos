@@ -256,6 +256,7 @@
 </style>
 <?php } ?>
 
+<!-- Cookies -->
 <div class="row" id="div_cookies" style="display: none">
     <div class="cookie-pc">
         <div class="cookie-10">
@@ -273,7 +274,6 @@
         </div>
     </div>
 </div>
-
 <div class="row new-cookie" id="new-cookie">
     <div class="cookie-pc col-md-12">
         <div class="row">
@@ -297,9 +297,9 @@
         </div>
     </div>
 </div>
+<!-- End Cookies -->
 
 <main style="position: relative; padding-top: 55px; background: #fbf7ef;">
-    
     <div id="main_banner" class="carousel slide banner_top" data-ride="carousel">
         <?php if($mobile_view == 0){ ?>
         <ol class="carousel-indicators custom-indicator">
@@ -418,13 +418,13 @@
                                 </div>
                                     
                                 <div class="col-md-12">
-                                    <p class="text-center stars">
+                                    <!-- <p class="text-center stars">
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
-                                    </p>
+                                    </p> -->
                                     <p class="prod-departamento"><span style="font-size: 13px;"><b style="color: grey"><?php echo ucfirst(mb_strtolower($aux_nome[0])) ?></b></span></p>
                                     <p class="text-center prod-nome" style="margin-bottom: 5%;"><?php echo ucfirst(mb_strtolower($aux_nome[1])) ?></p>
                                     <?php if($p['produto_promocao']){ ?>
