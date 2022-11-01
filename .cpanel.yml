@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/agencia/public_html/pp 
+    - export DEPLOYPATH=/home/agencia/public_html/pp  
     - /bin/cp -R * $DEPLOYPATH
     - export PATH=/home/agencia/bin/:$PATH
