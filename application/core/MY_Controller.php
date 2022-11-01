@@ -16,6 +16,7 @@ class MY_Controller extends CI_Controller {
 	    
         $dadosHeader['idpag']               = 1;
 		$dadosHeader['telefonedecontato']   = $site['whats'];
+        $dadosHeader['telefone']            = $site['telefone'];
 		$dadosHeader['departamentos']       = $this->departamentos->menuDepts();
 		$dadosHeader['scrMP'] = $extra;
 		

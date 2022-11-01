@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -314,31 +314,31 @@ $route['getboleto']     = 'pagamento2/boletoreturn';
 /*
 *   Rotas publicas 
 */
-            
+
 $route['2b1e190210df261675c4b801bc6e8989']          = 'areauser/entrar'; //carrinho
 $route['3ac186ea673c6560fd6756a7c3796794']          = 'correios/frete';
-            
+
 $route['f188220c570e7b56040941a83fdaf2bf']          = 'Mercapag/recebePagamento'; //compraMP
 $route['b5f06e72d6d5104bdae7736fd0786d9c']          = 'contato';
-            
+
 $route['2ed7ae53dde60f945ba3dc6a00d2365b']          = 'FinalizaUnico/updateClienteEndereco'; //compraUnica
 $route['3cac916df58bfeb8d10bcb667c55d50a']          = 'FinalizaUnico/login';
 $route['723d1cbbf8cd8390aa123698762b1129']          = 'FinalizaUnico/compra';
 $route['3a7ba319e0cf0fdffd39e64934e4c54a']          = 'FinalizaUnico/pagamento';
 $route['00af9148767db1213585b339276df4e6']          = 'inicio/resgataCEP';
-            
+
 $route['f3d93e09df4ae8d436c1d1aa8d6e08cf']          = 'contato/enviacontato'; //contato
-            
+
 $route['ca64a968b4507c33a7c38a4d93c715b5']          = 'FinalizaUnico/frete2'; //iframe_cart
 $route['afa44bc5ac8580b2cdd34d9e50e80db0']          = 'FinalizaUnico/atualiza2';
 $route['4de7d7673b8085024253a2236b14442b']          = 'FinalizaUnico/remove2';
 $route['c381f5b941991b232b548dc6110b2c54']          = 'FinalizaUnico/encerra';
-$route['b920e92e9e4616300f9b7e6f3fd78635']          = 'FinalizaUnico/telaUnica2';
+// $route['b920e92e9e4616300f9b7e6f3fd78635']          = 'FinalizaUnico/telaUnica2';
 $route['92e97566397e7d998f610c34726e7a20']          = 'areauser/Principal';
-            
-$route['93516455561e3a5a18a837062e89eda3']          = 'PagamentosPS/boleto';//iframe_final
+
+$route['93516455561e3a5a18a837062e89eda3']          = 'PagamentosPS/boleto'; //iframe_final
 $route['d06c138197af9ef4eb637c1a544fd50a']          = 'PagamentosPS/cartaoCredito';
-            
+
 $route['d41d8cd98f00b204e9800998ecf8427e']          = 'FinalizaUnico/logar'; //iframe_login
 $route['f0d521cc04be1fc17dd0e4a3eaa9416f']          = 'FinalizaUnico/cadastrar';
 $route['20f78cc3d3cba8f46f596c481357096d']          = 'FinalizaUnico/cadastrarCompleto';
@@ -348,20 +348,20 @@ $route['71b141ddd8292dea8bb362092fd5661f/(:num)']   = "produto/verproduto/$1";
 
 $route['2cbb8dbaacfbc463addd849f7c5ece4a']          = 'areauser/login'; //login
 $route['43a87db0555f4890c47e68401601be3e']          = 'areauser/insertCliente';
-            
+
 $route['93516455561e3a5a18a837062e89eda3']          = 'PagamentosPS/boleto'; //pagsegboleto
-            
+
 $route['d06c138197af9ef4eb637c1a544fd50a']          = 'PagamentosPS/cartaoCredito'; //pagsegcredito
-            
+
 $route['e308dd18f514e5db6400b6cfcc82a2df']          = 'conta#pedidos'; //pedido
 $route['f8dee182f9bb056fcecdeb3c150721dd']          = 'inicio/solicitaReembolso';
-            
+
 $route['c8b39540f80ad8d4952cf79d651aec77']          = 'areauser/deslogar'; //principaluser
 $route['518244d885f7954e658e58590b55f00e']          = 'areauser/updateClienteDados';
 $route['c7a0f86bd55fc21784a214275d528b2c']          = 'areauser/updateClienteEndereco';
 $route['2d7fdaba4614564489b1c83981f92672']          = 'areauser/redefinirSenha';
 $route['f2a65f4a9e58f011ea41f053ea58053d']          = 'areauser/verPedido';
-            
+
 $route['432b311230a5e558d6dfdd37aa7cb986']          = 'FinalizaUnico/finaliza2'; //produto
 
 $route['36d2a623d4b5878db84e0032b88bcabc/(:num)']   = 'PagamentoSTN/pedido/$1';
@@ -370,4 +370,3 @@ $route['pdv']                                       = 'pdv/index';
 $route['caixa']                                     = 'caixa/index';
 
 $route['teste']                                     = 'teste/testeBD';
- 
