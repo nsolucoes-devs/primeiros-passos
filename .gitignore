@@ -25,4 +25,4 @@ application/logs/*
 /application/config/database.php
 /imagens/*
 
-index.html
+index.php

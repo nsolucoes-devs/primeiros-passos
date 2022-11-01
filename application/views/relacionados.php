@@ -4,7 +4,7 @@
         <a href="<?php echo base_url('71b141ddd8292dea8bb362092fd5661f/'). $p['produto_id'] ?>">
             <div class="card zoom w-100 h-100">
                 <div class="card-body" style="padding: -2px;">
-                    <img class="img-product" src="<?php echo base_url('imagens/produtos/').$p['produto_id'] .'.jpg'; ?>" alt="">
+                    <img class="img-product" style="aspect-ratio: 1/1; object-fit: cover;" src="<?php echo base_url('imagens/produtos/').$p['produto_id'] .'.jpg'; ?>" alt="">
                     <!-- <div class="col-md-12 text-center">
                         <div class="estrelas" style="color: gold!important; padding-top: 3%">
                             <i class="fa fa-star" aria-hidden="true"></i>
