@@ -418,13 +418,13 @@
                                 </div>
                                     
                                 <div class="col-md-12">
-                                    <p class="text-center stars">
+                                    <!-- <p class="text-center stars">
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
                                         <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
-                                    </p>
+                                    </p> -->
                                     <p class="prod-departamento"><span style="font-size: 13px;"><b style="color: grey"><?php echo ucfirst(mb_strtolower($aux_nome[0])) ?></b></span></p>
                                     <p class="text-center prod-nome" style="margin-bottom: 5%;"><?php echo ucfirst(mb_strtolower($aux_nome[1])) ?></p>
                                     <?php if($p['produto_promocao']){ ?>
