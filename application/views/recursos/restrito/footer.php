@@ -32,13 +32,13 @@
             <?php if($mobile == 0){ ?>
                 <footer class="site-footer" style="position: fixed; width: 100%; bottom: 0; background: black; z-index: 999">
                     <div class="text-center" style="margin-left:25px; margin-top:0px">
-                        <p style="font-size: 11px;"><z style="margin-left:60%;">&copy; Gestão de Ecommerce - Versão 3.05<?php echo $mobile_footer ?></z>Desenvolvido por <img src="<?php echo base_url('assets/admin_base/n.png') ?>" class="n-footer"><strong>N Soluções</strong></p>
+                        <p style="font-size: 11px;"><z style="margin-left:60%;">&copy; Catálogo Digital - Versão 3.05<?php echo $mobile_footer ?></z>Desenvolvido por <img src="<?php echo base_url('assets/admin_base/n.png') ?>" class="n-footer"><strong>N Soluções</strong></p>
                     </div>
                 </footer>
             <?php }else{ ?>
                 <footer class="site-footer" style="position: relative; width: 100%; bottom: 0; background: black; z-index: 999">
                     <div class="text-center" style="margin-left:25px; margin-top:0px">
-                        <br><p style="font-size: 11px; position: relative; left: -5.5%;"><z>&copy; Gestão de Ecommerce - Versão 3.05<?php echo $mobile_footer ?></z><br>Desenvolvido por <img src="<?php echo base_url('assets/admin_base/n.png') ?>" class="n-footer"><strong>N Soluções</strong></p>
+                        <br><p style="font-size: 11px; position: relative; left: -5.5%;"><z>&copy; Catálogo Digital - Versão 3.05<?php echo $mobile_footer ?></z><br>Desenvolvido por <img src="<?php echo base_url('assets/admin_base/n.png') ?>" class="n-footer"><strong>N Soluções</strong></p>
                     </div>
                 </footer>
             <?php } ?>

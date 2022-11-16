@@ -144,27 +144,33 @@
         }
 
         .departamento-product {
-            color: lightgrey;
-            font-size: 13px;
+            color: #a3a3a3;
+            font-size: 16px;
             line-height: 12px;
             margin: 0;
             padding: 0
         }
 
         .product-titulo {
+            font-size: 18px;
             text-align: center;
             color: #444;
-            display: -webkit-box;
             overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+            white-space: nowrap;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            word-break: break-word;
             /* font-size: 14px; */
             margin-bottom: 10px;
             margin-top: 2%;
-            line-height: 16px;           
-            text-overflow: ellipsis;
-            max-height: 16px;
+            line-height: 16px;
+        }
+
+        .img-square {
+            aspect-ratio: 1/1;
+            width: 100%;
+            object-fit: contain;
         }
 
         /* .features-area div.card {
@@ -179,7 +185,7 @@
             }
 
             .features-area div.card img {
-                display:block;
+                display: block;
                 height: 150px;
                 width: 165px;
                 margin: auto;
@@ -194,7 +200,7 @@
             }
 
             .features-area div.card img {
-                display:block;
+                display: block;
                 height: 140px;
                 width: 165px;
                 margin: auto;
@@ -206,7 +212,7 @@
         @media (min-width: 768px) and (max-width: 991px) {
 
             .features-area div.card img {
-                display:block;
+                display: block;
                 height: 100px;
                 width: 80px;
                 margin: auto;
@@ -225,7 +231,7 @@
             }
 
             .features-area div.card img {
-                display:block;
+                display: block;
                 height: 100px;
                 width: 100px;
                 margin: auto;
@@ -236,7 +242,7 @@
         @media only screen and (min-width: 480px) and (max-width: 767px) {
 
             .features-area div.card img {
-                display:block;
+                display: block;
                 height: 100px;
                 width: 100px;
                 margin: auto;
@@ -272,25 +278,16 @@
                                 <div class="col-lg-3 col-md-4 col-6 form-group produtos-div">
                                     <a href="<?php echo base_url('71b141ddd8292dea8bb362092fd5661f/') . $p['produto_id'] ?>">
                                         <div class="card zoom">
-                                            <div class="card-body text-center" style="padding: 2px;">
-                                                <div class="mx-auto col-10 col-md-12 mt-3 h-75">
-                                                    <img class="img-fluid" src="<?php echo base_url('imagens/produtos/') . $p['produto_id'] . '.jpg'; ?>" alt="">
+                                            <div class="card-body text-center p-1">
+                                                <div class="mx-auto col-10 col-md-12 h-75 px-4">
+                                                    <img class="img-fluid img-square" src="<?php echo base_url('imagens/produtos/') . $p['produto_id'] . '.jpg'; ?>" alt="">
                                                 </div>
                                                 <?php if (isset($p['produto_porcentagem'])) { ?>
                                                     <p class="produto-desconto"><i class="fa fa-arrow-down" aria-hidden="true"></i> <?php $p['produto_porcentagem'] ?></p>
                                                 <?php } ?>
-                                               <div class="col-md-12 text-center">
-                                            <!-- <div class="estrelas" style="text-shadow: 0 0 1px #736102; color: gold!important; padding-top: 3%">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </div> -->
-                                        </div>
                                                 <div class="col-md-12 text-center">
                                                     <p class="departamento-product"><b><?php echo ucfirst(mb_strtolower($p['produto_departamento'])) ?></b></p>
-                                                    <p class="product-titulo"><b><?php echo ucfirst(mb_strtolower($p['produto_nome'])) ?></b></p>
+                                                    <p class="product-titulo py-1"><b><?php echo ucfirst(mb_strtolower($p['produto_nome'])) ?></b></p>
                                                 </div>
                                                 <!-- <div class="row" id="campo_preco">
                                             <?php if ($p['produto_promocao']) { ?>

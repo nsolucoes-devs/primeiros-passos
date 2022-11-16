@@ -104,7 +104,7 @@ $route['2802a69d3ecca828c74a75fcfeab3200']          = 'logincontroller/validar';
 $route['215521f1d88d23d4411a877b4d4a0d87']          = 'logincontroller/sair';                   //OK
 
 //$route['home']                                    = 'restrito/indexAdmin';
-$route['106a6c241b8797f52e1e77317b96a201']          = 'restrito/indexAdmin';                    //OK
+$route['106a6c241b8797f52e1e77317b96a201']          = 'admin/adminprodutos/produtos';                    //OK
 
 //Produtos
 $route['391a027a8fef2eba4487a00156901156']                  = 'admin/adminprodutos/produtos';

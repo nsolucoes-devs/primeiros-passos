@@ -150,6 +150,17 @@ class Produto extends MY_Controller {
 	    $data['valor'] = $this->produtos->getValorSite($this->uri->segment(2));
 	    $data['porcentagem'] = $this->produtos->getPromocaoSite($this->uri->segment(2), $data['valor']);
 	    
+	    /*
+	        ***** Dados de chamada para WhatsApp
+	        ** Dev: Anderson Moreira
+	        ** Data: 05/11/2022
+	    */
+	    $aux = $this->configs->getSite();
+	    $data['whats'] = $aux['whats'];
+	    $data['whats'] = '3491601226';
+	    /*
+	        ***** Fim dados de chamada para WhatsApp
+	    */
 	    if($data['valor'] == $data['porcentagem']['precoNovo']){
 	        unset($data['porcentagem']);
 	    }else{

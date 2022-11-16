@@ -225,7 +225,7 @@
                                     <h5 style="color: green"><b>Carrossel 1:</b></h5>
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <img src="<?php echo base_url() .$site['banner_principal1'] ?>" style="height: 150px; width: 100%;">
+                                    <img src="<?php echo base_url() .$site['banner_principal1'] ?>" style="height: 100%; width: 100%;">
                                     <div class="col-md-12 text-center">
                                         <br>
                                         <button type="button" class="btn btn-primary" onclick="trigger_principal1()">Enviar novo banner principal 1</button>
@@ -259,7 +259,7 @@
                                     <h5 style="color: green"><b>Carrossel 2:</b></h5>
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <img src="<?php echo base_url() .$site['banner_principal2'] ?>" style="height: 150px; width: 100%">
+                                    <img src="<?php echo base_url() .$site['banner_principal2'] ?>" style="height: 100%; width: 100%;">
                                     <div class="col-md-12 text-center">
                                         <br>
                                         <button type="button" class="btn btn-primary" onclick="trigger_principal2()">Enviar novo banner principal 2</button>
@@ -293,7 +293,7 @@
                                     <h5 style="color: green"><b>Carrossel 3:</b></h5>
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <img src="<?php echo base_url() .$site['banner_principal3'] ?>" style="height: 150px; width: 100%">
+                                    <img src="<?php echo base_url() .$site['banner_principal3'] ?>" style="height: 100%; width: 100%;">
                                     <div class="col-md-12 text-center">
                                         <br>
                                         <button type="button" class="btn btn-primary" onclick="trigger_principal3()">Enviar novo banner principal 3</button>
@@ -327,7 +327,7 @@
                                     <h5 style="color: green"><b>Carrossel 4:</b></h5>
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <img src="<?php echo base_url() .$site['banner_principal4'] ?>" style="height: 150px; width: auto">
+                                    <img src="<?php echo base_url() .$site['banner_principal4'] ?>" style="height: 100%; width: 100%;">
                                     <div class="col-md-12 text-center">
                                         <br>
                                         <button type="button" class="btn btn-primary" onclick="trigger_principal4()">Enviar novo banner principal 4</button>
@@ -356,7 +356,7 @@
                                 </div>
                             </div>
                             
-                            <div class="row form-group">
+                            <!-- <div class="row form-group">
                                 <div class="col-md-12">
                                     <h5 style="color: green"><b>Mini banners retangulares:</b></h5>
                                 </div>
@@ -392,7 +392,7 @@
                                         <input name="banner_retangular2Subtitulo" id="banner_retangular2Subtitulo" type="text" value="<?php echo $site['banner_retangular1Subtitulo'] ?>" class="form-control">
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             
                             
                         </div>  
@@ -417,8 +417,8 @@
             <div class="row">
                 <div class="col-md-12 text-right">
                     <div class="col-md-12 text-right">
-                        <button type="submit" class="btn btn-primary">Gravar</button>
                         <a href="<?php echo base_url('106a6c241b8797f52e1e77317b96a201') ?>"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                        <button type="submit" class="btn btn-primary">Gravar</button>
                     </div>
                     </form>
                 </div>

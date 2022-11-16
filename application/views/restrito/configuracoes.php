@@ -391,9 +391,9 @@
                 <!-- <li class="nav-item">
                     <a class="nav-link" id="payment-tab" data-toggle="tab" href="#payment" role="tab" aria-controls="payment" aria-selected="true">Pagamento</a>
                 </li> -->
-                <li class="nav-item active">
+                <!-- <li class="nav-item active">
                     <a class="nav-link" id="correio-tab" data-toggle="tab" href="#correio" role="tab" aria-controls="correio" aria-selected="true">Envios</a>
-                </li>
+                </li> -->
                 <!--
                 <li class="nav-item">
                     <a class="nav-link" id="transportadora-tab" data-toggle="tab" href="#transportadora" role="tab" aria-controls="transportadora" aria-selected="true">Transportadora</a>
@@ -405,8 +405,8 @@
                 <!-- <li class="nav-item">
                     <a class="nav-link" id="gestoremail-tab" data-toggle="tab" href="#gestoremail" role="tab" aria-controls="gestoremail" aria-selected="true">Email</a>
                 </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" id="vendedores-tab" data-toggle="tab" href="#vendedores" role="tab" aria-controls="vendedores" aria-selected="true">Whatsapp Ecommerce</a>
+                <li class="nav-item" style="padding: 4px 16px;">
+                    <span class="nav-link" id="vendedores-tab"  aria-controls="vendedores" aria-selected="true"> Whatsapp Ecommerce</span>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" id="soon-tab" data-toggle="tab" href="#soon" role="tab" aria-controls="soon" aria-selected="true">Formas de Pagamentos</a> -->
@@ -785,7 +785,7 @@
                 </div>
                 
                 
-                <div class="tab-pane active" id="gestoremail" role="tabpanel" aria-labelledby="gestoremail-tab">
+                <!-- <div class="tab-pane active" id="gestoremail" role="tabpanel" aria-labelledby="gestoremail-tab">
                     <form action="<?php echo base_url('1b447af94eb10e8831c155c01be26599') ?>" method="post">
                         <div class="row">
                             <div class="col-md-3 form-group text-center">
@@ -852,7 +852,7 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 
                 
                 <div class="tab-pane fade" id="soon" role="tabpanel" aria-labelledby="soon-tab">
@@ -938,7 +938,8 @@
                         </div>
                     </form>
                 </div>
-                <div class="tab-pane fade" id="vendedores" role="tabpanel" aria-labelledby="vendedores-tab">
+                
+                <div class="tab-pane active" id="vendedores" role="tabpanel" aria-labelledby="vendedores-tab">
                     <div class="c-card">
                         <div class="c-card-header">
                             <div class="row">

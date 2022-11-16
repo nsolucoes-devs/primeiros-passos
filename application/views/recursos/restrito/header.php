@@ -244,7 +244,7 @@
                     <div class="col-md-7 text-right" style="margin: 23px 0">
                         <div class="top-menu">
                             <div class="row" id="opts">
-                                <?php if($perm['perfilusuario_dashboard'] == 1 || $super == 1){ ?>
+                                <?php /*if($perm['perfilusuario_dashboard'] == 1 || $super == 1){ ?>
                                     <div class="col-md-1 text-center" style="margin-left: 40%;">
                                         <a href="<?php echo base_url('106a6c241b8797f52e1e77317b96a201') ?>">
                                             <p class="opt-menu <?php if($idpag == 1){echo "ativo-h";} ?>">
@@ -252,10 +252,10 @@
                                             </p>
                                         </a>
                                     </div>
-                                <?php } ?>
+                                <?php }*/ ?>
                                 
                                 <?php if($perm['perfilusuario_produto'] == 1 || $perm['perfilusuario_departamento'] == 1 || $super == 1){ ?>
-                                    <div class="col-md-1 text-center div-drop">
+                                    <div class="col-md-1 text-center div-drop" style="margin-left: 65%;">
                                         <p class="opt-menu <?php if($idpag == 2){echo "ativo-h";} ?>">
                                         <i style="font-size: 25px" class="fa fa-newspaper-o" aria-hidden="true" title="Catálogo"></i><br>
                                         <!--CATALOGO-->&nbsp;&nbsp;<em style="margin-right: 8px;" class="fa fa-caret-down"></em></p>
@@ -291,9 +291,9 @@
                                         <!--USUÁRIOS-->&nbsp;&nbsp;<em style="margin-right: 8px;" class="fa fa-caret-down"></em></p>
                                         <div class="custom-drop">
                                             <div class="drop-content">
-                                                <?php if($perm['perfilusuario_cliente'] == 1 || $super == 1) { ?>
+                                                <?php /*if($perm['perfilusuario_cliente'] == 1 || $super == 1) { ?>
                                                     <a href="<?php echo base_url('d2fb359e7478da4e7ec01ef527bdeb53') ?>"><p class="bb">Clientes</p></a>
-                                                <?php } ?>
+                                                <?php }*/ ?>
                                                 <?php if($perm['perfilusuario_usuario'] == 1 || $super == 1) { ?>
                                                     <a href="<?php echo base_url('0d658457c62859e2c93026f9f70ce219') ?>"><p class="bb">Usuários</p></a>
                                                 <?php } ?>
@@ -305,7 +305,7 @@
                                     </div>
                                 <?php } ?>
 
-                                <?php if($perm['perfilusuario_pedido'] == 1 || $perm['perfilusuario_solicitacao'] == 1 || $perm['perfilusuario_devolucao'] == 1 || $perm['perfilusuario_relatorio'] == 1 || $super == 1 || $_SESSION['perfil'] == 10){ ?>
+                                <?php /*if($perm['perfilusuario_pedido'] == 1 || $perm['perfilusuario_solicitacao'] == 1 || $perm['perfilusuario_devolucao'] == 1 || $perm['perfilusuario_relatorio'] == 1 || $super == 1 || $_SESSION['perfil'] == 10){ ?>
                                     <div class="col-md-1 text-center div-drop"<?php if($_SESSION['perfil'] == 10){ ?> style="margin-left: 73%;" <?php } ?>>
                                         <p class="opt-menu <?php if($idpag == 4){echo "ativo-h";} ?>">
                                         <i style="font-size: 25px" class="fa fa-usd" aria-hidden="true" title="Financeiro"></i><br>
@@ -327,8 +327,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                <?php } ?>
-                                
+                                <?php }*/ ?>                                
                                 
                                 <?php if($perm['perfilusuario_ajuste'] == 1 || $perm['perfilusuario_site'] == 1 || $super == 1){ ?>
                                 <div class="col-md-1 text-center div-drop">
@@ -346,9 +345,10 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <?php } ?>
                                 
-                                <?php if($perm['perfilusuario_ajuste'] == 1 || $perm['perfilusuario_site'] == 1 || $super == 1 || $_SESSION['perfil'] == 10 || $_SESSION['perfil'] == 9){ ?>
+                                <?php /*if($perm['perfilusuario_ajuste'] == 1 || $perm['perfilusuario_site'] == 1 || $super == 1 || $_SESSION['perfil'] == 10 || $_SESSION['perfil'] == 9){ ?>
                                 <div class="col-md-1 text-center div-drop"<?php if($_SESSION['perfil'] == 9){ ?> style="margin-left: 80%;" <?php } ?>>
                                     <p class="opt-menu <?php if($idpag == 8){echo "ativo-h";} ?>">
                                     <i style="font-size: 25px" class="fa fa-shopping-bag" aria-hidden="true" title="Lojas"></i><br>
@@ -369,7 +369,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php } ?>
+                                <?php }*/ ?>
                                 
                                 <div class="col-md-1 text-center div-drop">
                                     <p class="opt-menu <?php if($idpag == 7){echo "ativo-h";} ?>">

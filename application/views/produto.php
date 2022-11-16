@@ -510,7 +510,7 @@
                     <div class="card" style="border: 0">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-4">
                                     <?php if ($produto) { ?>
                                         <h3 class="titulo-produto"><?php echo ucwords(mb_strtolower($produto['produto_nome'])) ?></h3>
                                     <?php } ?>
@@ -534,10 +534,10 @@
 
                                 <?php if (!empty($tamanhos[0]) || !empty($cores[0])) { ?>
                                     <div class="col-md-12 form-group">
-                                        <label><b>Selecione a Opção</b></label>
-                                        <div class="col-md-12 input-group mx-auto row">
+                                        <label><b>Selecione a Opção:</b></label>
+                                        <div class="col-md-12 mt-2 input-group row">
                                             <?php if (!empty($tamanhos[0])) { ?>
-                                                <select data-placement="top" data-toggle="popover" id="tamanhos" class="form-control w-50">
+                                                <select data-placement="top" data-toggle="popover" id="tamanhos" class="form-control mr-3 col-md-4">
                                                     <option value="" disabled selected hidden> Tamanho </option>
                                                     <?php foreach ($tamanhos as $t) { ?>
                                                         <?= '<option value="' . $t . '">' . $t . '</option>' ?>
@@ -545,7 +545,7 @@
                                                 </select>
                                             <?php } ?>
                                             <?php if (!empty($cores[0])) { ?>
-                                                <select data-placement="top" data-toggle="popover" id="cores" class="form-control w-50">
+                                                <select data-placement="top" data-toggle="popover" id="cores" class="form-control col-md-4">
                                                     <option value="" disabled selected hidden> Cor </option>
                                                     <?php foreach ($cores as $c) { ?>
                                                         <?= '<option value="' . $c . '">' . $c . '</option>' ?>
@@ -563,7 +563,7 @@
                                         <h3 class="pro-valor">R$<?php echo number_format($valor, 2, ',', '.') ?></h3>
                                 </div> -->
 
-                                <?php if ($estoque != 0) { ?>
+                                <?php //if ($estoque != 0) { ?>
                                     <div class="col-lg-6 col-md-12 col-12 text-center form-group">
                                         <div class="qtd-group input-group mb-2">
                                             <div class="input-group-prepend" style="cursor: pointer" onclick="diminuir()">
@@ -579,18 +579,24 @@
                                             </div>
                                         </div>
                                     </div>
-                                <?php } else { ?>
+                                <!--
+                                <?php //} else { ?>
                                     <hr>
                                     <div class="col-md-12 col-12 form-group" style="margin-top: 5%" id="div-esgotado">
                                         <span class="btn-esgotado btn btn-block">
                                             PRODUTO ESGOTADO&nbsp;&nbsp;<i class=" fa fa fa-exclamation" aria-hidden="true"></i>
                                         </span>
-                                    </div>
-                                <?php } ?>
+                                    </div> -->
+                                <?php //} ?>
 
                                 <div class="col-md-12 col-12 form-group" style="margin-top: 5%" id="div-estoque">
                                     <button onclick="Carrinho()" class="btn btn-primary btn-block btn-lg">
                                         COMPRAR &nbsp;&nbsp;<i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-12 col-12 form-group" style="margin-top: 5%" id="div-estoque">
+                                    <button onclick="CallWhats()" class="btn btn-success btn-block btn-lg">
+                                        COMPRAR &nbsp;&nbsp;<i class="fa fa-whatsapp" aria-hidden="true"></i>
                                     </button>
                                 </div>
                             </div>
@@ -700,7 +706,7 @@
             $('#carouselproduct').carousel({
                 interval: 2000,
                 cycle: true
-            }); 
+            });
 
 
             <?php if ($estoque == 0) { ?>
@@ -918,5 +924,30 @@
                     $('#div-estoque').show();
                 }
             }
+        }
+    </script>
+
+
+    <!-- Função para chamada de Whatsapp -->
+    <script>
+        function CallWhats() {
+            //Aqui entras as variáveis que podem ser selecionadas na página e o numro do WhatsApp
+
+            if($("#cores option:selected").val() != '') { 
+                var str = $("#cores option:selected").val().toLowerCase();
+                var cores = "\n *Cor*: " + str[0].toUpperCase() + str.slice(1);
+            } else {
+                cores = '';
+            }
+
+            var quantidade = $("#qtd").val();
+            var produto = '<?php echo ucwords(mb_strtolower($produto['produto_nome'])); ?>';
+            now = new Date;
+            var momento = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear() + " " + now.getHours() + ":" + now.getMinutes();
+            var whats = '<?php echo $whats; ?>';
+
+            var texto = "🤰👩🏻👶🏻***Catálogo***\n***Primeiros Passos***\n\n 📅" + momento + "\n\n ▪️" + produto + cores + "\n *Qtd*: " + quantidade + "\n\n *Quero mais detalhes sobre este item*.";
+            texto = window.encodeURIComponent(texto);
+            window.open("https://api.whatsapp.com/send?phone=55" + whats + "&text=" + texto);
         }
     </script>

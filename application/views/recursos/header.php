@@ -269,7 +269,13 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
       display: block;
     }
 
+    .header-area .logo img {
+        height: var(--header-height);
+        margin-top: 10px;
+    }
+
     @media only screen and (max-width: 1200px) {
+
       #busca-baixo {
         display: none !important;
       }
@@ -280,6 +286,10 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
 
       .classy-navbar {
         padding-left: 1% !important;
+      }
+
+      .header-area .logo img {
+        margin-top: 10px;
       }
     }
 
@@ -302,6 +312,10 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
         position: relative;
         top: 1px;
         left: -40px;
+      }
+
+      .header-area .logo img {
+        margin-top: 10px;
       }
     }
 
@@ -331,6 +345,11 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
       #icone-conta {
         position: unset;
         margin-top: 15% !important;
+      }
+
+      .header-area .logo img {
+        height: calc(var(--header-height) - 10px);
+        margin-top: 2px;
       }
     }
 
@@ -378,6 +397,11 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
       .preloader .lds-ellipsis div {
         background: var(--base-color);
       }
+
+      .header-area .logo img {
+        height: calc(var(--header-height) - 10px);
+        margin-top: 2px;
+      }
     }
 
     #ul-departamentos>ul {
@@ -418,7 +442,7 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
             <!-- Logo Area -->
             <div class="logo" style="height: var(--header-height);">
               <a href="<?php echo base_url() ?>">
-                <img style="height: calc(var(--header-height) - 10px); width: auto;margin-top: 2px;" src="<?php echo base_url('imagens/site/logo.png') ?>" alt="">
+                <img class="img-fluid" src="<?php echo base_url('imagens/site/logo.png') ?>" alt="">
               </a>
             </div>
 
@@ -460,7 +484,7 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                                                                         echo 'margin-top:  -5px;';
                                                                       } ?>">
         <?php if ($mobile == 0) { ?>
-          <a href="<?php echo base_url('inicio/contato') ?>" class="icones-header"><i style="color: white; font-size: 35px;" class="fa fa-whatsapp" aria-hidden="true"></i> <span style="color: white"></span></a>
+          <a href="https://wa.me/5534992266280" class="icones-header"><i style="color: white; font-size: 35px;" class="fa fa-whatsapp" aria-hidden="true"></i> <span style="color: white"></span></a>
           <!-- <div class="position-relative" style="margin-right: 40px;">
                                     <a class="icones-header" href="<?php echo base_url('b920e92e9e4616300f9b7e6f3fd78635') ?>">
                                         <i style="font-size: 35px; color: white" class="fa fa-shopping-basket" aria-hidden="true"></i> 
