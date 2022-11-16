@@ -23,6 +23,6 @@ application/logs/*
 # Config server
 /application/config/config.php
 /application/config/database.php
-/imagens/*
+# /imagens/*
 
 index.php
